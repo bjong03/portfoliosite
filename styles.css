@@ -147,8 +147,27 @@
   /* ===== TIMELINE — dark display hall ===== */
   .sculpture-hall{ background: radial-gradient(ellipse at 50% 0%, #1E3641, var(--wall-2) 70%); position:relative; overflow:hidden; }
   .light-trail{ position:absolute; inset:0; opacity:0.5; pointer-events:none; }
-  .pedestal-row{ position:relative; z-index:1; display:flex; gap:36px; overflow-x:auto; padding:30px 42px 50px; align-items:flex-end; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity; }
-  .pedestal-unit{ flex:0 0 150px; text-align:center; scroll-snap-align:start; }
+  .timeline-track{ position:relative; z-index:1; display:flex; align-items:center; padding:0 42px; }
+  .timeline-viewport{ overflow:hidden; flex:1 1 auto; }
+  .pedestal-row{ display:flex; gap:36px; padding:30px 6px 50px; align-items:flex-end; transition:transform 0.45s cubic-bezier(.4,.1,.2,1); }
+  .pedestal-unit{ flex:0 0 210px; text-align:center; }
+
+  .scroll-arrow{
+    flex:0 0 auto; width:44px; height:44px; border-radius:50%; z-index:2;
+    background:linear-gradient(160deg, var(--gold-light), var(--gold) 70%);
+    border:2px solid var(--ink); color:var(--ink); font-family:var(--display); font-weight:700; font-size:19px;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.35); transition:opacity 0.2s, transform 0.15s;
+  }
+  .scroll-arrow:hover{ transform:scale(1.08); }
+  .scroll-arrow:active{ transform:scale(0.96); }
+  .scroll-arrow.left{ margin-right:14px; }
+  .scroll-arrow.right{ margin-left:14px; animation:nudge-right 1.6s ease-in-out infinite; }
+  .scroll-arrow[disabled]{ opacity:0.25; cursor:default; pointer-events:none; animation:none; }
+  @keyframes nudge-right{
+    0%,100%{ transform:translateX(0); }
+    50%{ transform:translateX(4px); }
+  }
 
   .case-stage{ position:relative; height:120px; display:flex; align-items:flex-end; justify-content:center; margin-bottom:6px; }
   .case-glow{
@@ -177,10 +196,17 @@
   .plaque-mini{
     background:var(--plaque); border:2px solid var(--ink); border-radius:6px;
     padding:8px 10px; margin-top:4px; text-align:left; box-shadow:0 3px 0 rgba(0,0,0,0.3);
+    height:132px; display:flex; flex-direction:column; overflow:hidden;
   }
-  .plaque-mini .yr{font-family:var(--mono); font-size:9.5px; color:var(--gold-dark); margin-bottom:3px;}
-  .plaque-mini h4{font-family:var(--display); font-size:13px; font-weight:600; margin-bottom:2px; color:var(--ink);}
-  .plaque-mini p{font-size:10.5px; color:var(--ink-soft); line-height:1.4;}
+  .plaque-mini .yr{font-family:var(--mono); font-size:9.5px; color:var(--gold-dark); margin-bottom:3px; flex:0 0 auto;}
+  .plaque-mini h4{
+    font-family:var(--display); font-size:13px; font-weight:600; margin-bottom:2px; color:var(--ink);
+    display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; flex:0 0 auto;
+  }
+  .plaque-mini p{
+    font-size:10.5px; color:var(--ink-soft); line-height:1.4;
+    display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4; overflow:hidden;
+  }
 
   /* ===== PROJECTS — regal gallery wall ===== */
   .projects-wrap{ padding:36px 42px 0; }
@@ -271,7 +297,7 @@
     .stanchion-strip{display:none;}
     .section-head{padding:44px 28px 18px;}
     .projects-wrap{padding-left:28px; padding-right:28px;}
-    .pedestal-row{padding:26px 28px 40px;}
+    .timeline-track{padding:0 28px;}
     nav.topbar{padding:16px 24px;}
   }
 
@@ -289,8 +315,13 @@
     .section-head{padding:36px 20px 16px;}
     .section-head h2{font-size:22px;}
 
-    .pedestal-row{padding:20px 20px 34px; gap:22px;}
-    .pedestal-unit{flex:0 0 128px;}
+    .timeline-track{padding:0 12px;}
+    .pedestal-row{padding:20px 6px 34px; gap:22px;}
+    .pedestal-unit{flex:0 0 170px;}
+    .plaque-mini{height:150px;}
+    .scroll-arrow{width:36px; height:36px; font-size:16px;}
+    .scroll-arrow.left{margin-right:6px;}
+    .scroll-arrow.right{margin-left:6px;}
 
     .gallery{grid-template-columns:1fr; gap:30px; padding-bottom:30px;}
     .frame.wide{grid-column:span 1;}

@@ -14,12 +14,12 @@
   <nav class="topbar">
     <div class="brandmark">
       <svg class="leaf-ico" viewBox="0 0 28 28"><path d="M14 3c6 2 9 7 9 12-4 1-9-1-11-5-1 3 0 7 3 9-5 1-10-3-10-9 0-4 3-6 9-7z" fill="var(--gold)" stroke="var(--ink)" stroke-width="1"/></svg>
-      THE MUSEUM
+      MUSEUM OF JONG
     </div>
     <div class="links">
       <a href="#about">About</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#projects">Gallery</a>
+      <a href="#timeline">Career</a>
+      <a href="#projects">Portfolio</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
@@ -96,10 +96,10 @@
       <div class="ticket-wrap">
         <div class="ticket-glow"></div>
         <div class="ticket">
-          <div class="admit">Admit One — Now Showing</div>
-          <h1>Jordan Rivera</h1>
-          <div class="role">Product Manager, Curator of Things That Ship</div>
-          <p class="desc">I build the plan, get hands-on with the build, and stay close to what ships. Currently leading platform strategy for a 40-person engineering org at a Series C startup. Career milestones live in the Sculpture Hall, portfolio pieces in the Gallery Wing — every exhibit shipped to real users.</p>
+          <div class="admit">Admit One — Now Presenting</div>
+          <h1>Brandon Jong</h1>
+          <div class="role">Engineering Student, Product Manager, AI Builder</div>
+          <p class="desc">I am a final year Integrated Engineering co-op student at the University of British Columbia focussing in Computer and Chemical Engineering. I love leading engineering teams to build impactful products, and I'm especially drawn to how agents can drive business value while improving user experience.</p>
           <div class="hero-cta">
             <a class="btn primary" href="#projects">Enter the gallery</a>
             <a class="btn" href="#contact">Say hello</a>
@@ -118,10 +118,12 @@
     <div class="section-head">
       <div class="wing-label">Sculpture Hall</div>
       <h2>Career Timeline</h2>
-      <p class="sub">Permanent collection, arranged chronologically — company marks behind glass.</p>
     </div>
 
-    <div class="pedestal-row">
+    <div class="timeline-track">
+      <button class="scroll-arrow left" id="timelinePrev" onclick="scrollTimeline(-1)" aria-label="Show previous pedestals">&#8249;</button>
+      <div class="timeline-viewport">
+    <div class="pedestal-row" id="pedestalRow">
 
       <div class="pedestal-unit">
         <div class="case-stage">
@@ -139,7 +141,7 @@
           <rect x="11" y="6" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
           <rect x="4" y="0" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
         </svg>
-        <div class="plaque-mini"><div class="yr">2019—20</div><h4>Assoc. PM, Loopline</h4><p>First product hire. +18% activation.</p></div>
+        <div class="plaque-mini"><div class="yr">Grad: Apr 2027</div><h4>University of British Columbia</h4><p>BASc in Integrated Engineering, focussing in Computer and Chemical Engineering</p></div>
       </div>
 
       <div class="pedestal-unit">
@@ -158,7 +160,7 @@
           <rect x="11" y="6" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
           <rect x="4" y="0" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
         </svg>
-        <div class="plaque-mini"><div class="yr">2020—22</div><h4>PM, Fernway</h4><p>Owned growth across web &amp; mobile.</p></div>
+        <div class="plaque-mini"><div class="yr">May 2026 - Aug 2026</div><h4>Microsoft</h4><p>Technical Program Manager Intern, Cloud Operations and Innovation</p></div>
       </div>
 
       <div class="pedestal-unit">
@@ -177,7 +179,7 @@
           <rect x="11" y="6" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
           <rect x="4" y="0" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
         </svg>
-        <div class="plaque-mini"><div class="yr">2022—24</div><h4>Sr. PM, Northbeam</h4><p>Shipped the first external API product.</p></div>
+        <div class="plaque-mini"><div class="yr">Jan 2025 - Aug 2025</div><h4>Procter & Gamble</h4><p>Digital Product Manager Intern, Global Business Services - Consumer Research</p></div>
       </div>
 
       <div class="pedestal-unit">
@@ -196,9 +198,50 @@
           <rect x="11" y="6" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
           <rect x="4" y="0" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
         </svg>
-        <div class="plaque-mini"><div class="yr">2024—Now</div><h4>Lead PM, Kiln Labs</h4><p>Platform strategy, 40-person eng org.</p></div>
+        <div class="plaque-mini"><div class="yr">Sep 2024 - Dec 2024</div><h4>KPMG Canada</h4><p>Management Consultant Intern, Technology Strategy & Transformation</p></div>
       </div>
 
+      <div class="pedestal-unit">
+        <div class="case-stage">
+          <div class="case-glow"></div>
+          <div class="display-case"><div class="logo-monogram" style="background:var(--pink-glow);">XX</div></div>
+        </div>
+        <svg class="pillar-pedestal" width="70" height="82" viewBox="0 0 70 82">
+          <rect x="4" y="76" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="11" y="66" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="20" y="16" width="30" height="50" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="26" y1="16" x2="26" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <line x1="32" y1="16" x2="32" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <line x1="38" y1="16" x2="38" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <line x1="44" y1="16" x2="44" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <rect x="11" y="6" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="4" y="0" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
+        </svg>
+        <div class="plaque-mini"><div class="yr">May 2024 - Aug 2024</div><h4>HATCH/entrepreneurship@UBC</h4><p>Software/Engineering Intern at Orca Water Solutions & Mitra Biotechnologies</p></div>
+      </div>
+
+      <div class="pedestal-unit">
+        <div class="case-stage">
+          <div class="case-glow"></div>
+          <div class="display-case"><div class="logo-monogram" style="background:var(--gold);">YY</div></div>
+        </div>
+        <svg class="pillar-pedestal" width="70" height="82" viewBox="0 0 70 82">
+          <rect x="4" y="76" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="11" y="66" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="20" y="16" width="30" height="50" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="26" y1="16" x2="26" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <line x1="32" y1="16" x2="32" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <line x1="38" y1="16" x2="38" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <line x1="44" y1="16" x2="44" y2="66" stroke="var(--stone-dark)" stroke-width="1.3"/>
+          <rect x="11" y="6" width="48" height="10" fill="var(--stone)" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="4" y="0" width="62" height="6" fill="var(--stone-dark)" stroke="var(--ink)" stroke-width="1.5"/>
+        </svg>
+        <div class="plaque-mini"><div class="yr">Sep 2023 - Apr 2026</div><h4>University of British Columbia</h4><p>Undergraduate Teaching Assistant, APSC 100 & APSC 101 (W23, W25)</p></div>
+      </div>
+
+    </div>
+      </div>
+      <button class="scroll-arrow right" id="timelineNext" onclick="scrollTimeline(1)" aria-label="Show next pedestals">&#8250;</button>
     </div>
   </div>
 
@@ -281,7 +324,7 @@
   </div>
 
   <footer>
-    <span>© 2026 Jordan Rivera</span>
+    <span>© 2026 Brandon Jong</span>
     <span id="contact">hello@jordanrivera.pm</span>
   </footer>
 </div>

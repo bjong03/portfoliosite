@@ -9,6 +9,48 @@ function toggleMenu(){
     document.getElementById('menuToggle').setAttribute('aria-expanded','false');
   }
 
+  (function(){
+    const row = document.getElementById('pedestalRow');
+    const prevBtn = document.getElementById('timelinePrev');
+    const nextBtn = document.getElementById('timelineNext');
+    if(!row || !prevBtn || !nextBtn) return;
+
+    let index = 0;
+
+    function step(){
+      const unit = row.querySelector('.pedestal-unit');
+      const gap = parseFloat(getComputedStyle(row).columnGap || getComputedStyle(row).gap || 0);
+      return unit ? unit.getBoundingClientRect().width + gap : 0;
+    }
+
+    function visibleCount(){
+      const s = step();
+      return s ? Math.max(1, Math.floor((row.parentElement.clientWidth + parseFloat(getComputedStyle(row).gap||0)) / s)) : 1;
+    }
+
+    function maxIndex(){
+      const total = row.querySelectorAll('.pedestal-unit').length;
+      return Math.max(0, total - visibleCount());
+    }
+
+    function update(){
+      const max = maxIndex();
+      if(index > max) index = max;
+      if(index < 0) index = 0;
+      row.style.transform = `translateX(${-index * step()}px)`;
+      prevBtn.disabled = index <= 0;
+      nextBtn.disabled = index >= max;
+    }
+
+    window.scrollTimeline = function(dir){
+      index += dir;
+      update();
+    };
+
+    window.addEventListener('resize', update);
+    update();
+  })();
+
   function openCase(){ document.getElementById('overlay').classList.add('open'); }
   function closeCase(){ document.getElementById('overlay').classList.remove('open'); }
   document.getElementById('overlay').addEventListener('click', function(e){ if(e.target === this) closeCase(); });
