@@ -150,7 +150,7 @@
   .timeline-track{ position:relative; z-index:1; display:flex; align-items:center; padding:0 42px; }
   .timeline-viewport{ overflow:hidden; flex:1 1 auto; }
   .pedestal-row{ display:flex; gap:36px; padding:30px 6px 50px; align-items:flex-end; transition:transform 0.45s cubic-bezier(.4,.1,.2,1); }
-  .pedestal-unit{ flex:0 0 210px; text-align:center; }
+  .pedestal-unit{ flex:0 0 235px; text-align:center; }
 
   .scroll-arrow{
     flex:0 0 auto; width:44px; height:44px; border-radius:50%; z-index:2;
@@ -169,15 +169,15 @@
     50%{ transform:translateX(4px); }
   }
 
-  .case-stage{ position:relative; height:120px; display:flex; align-items:flex-end; justify-content:center; margin-bottom:6px; }
+  .case-stage{ position:relative; height:140px; display:flex; align-items:flex-end; justify-content:center; margin-bottom:6px; }
   .case-glow{
     position:absolute; top:-20px; left:50%; transform:translateX(-50%);
-    width:150px; height:120px;
+    width:180px; height:140px;
     background:radial-gradient(ellipse at center, rgba(242,223,166,0.3), transparent 70%);
     pointer-events:none;
   }
   .display-case{
-    position:relative; width:92px; height:80px;
+    position:relative; width:120px; height:104px;
     background:linear-gradient(160deg, rgba(255,255,255,0.92), rgba(234,241,227,0.6));
     border:2px solid var(--gold-dark); border-radius:8px 8px 4px 4px;
     display:flex; align-items:center; justify-content:center;
@@ -185,28 +185,29 @@
   }
   .display-case::after{ content:""; position:absolute; bottom:0; left:0; right:0; height:6px; background:var(--ink); opacity:0.12; }
   .logo-monogram{
-    width:46px; height:46px; border-radius:50%;
+    width:70px; height:70px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     font-family:var(--display); font-weight:700; font-size:15px; color:#fff;
     border:2px solid var(--ink); z-index:1; overflow:hidden; background:#fff;
   }
-  .logo-monogram img{ width:100%; height:100%; object-fit:contain; padding:3px; }
+  .logo-monogram img{ width:100%; height:100%; object-fit:contain; padding:5px; }
+  .logo-monogram img.square-logo{ padding:14px; }
 
   .pillar-pedestal{ display:block; margin:0 auto; filter:drop-shadow(0 6px 5px rgba(0,0,0,0.35)); }
 
   .plaque-mini{
     background:var(--plaque); border:2px solid var(--ink); border-radius:6px;
-    padding:8px 10px; margin-top:4px; text-align:left; box-shadow:0 3px 0 rgba(0,0,0,0.3);
-    height:132px; display:flex; flex-direction:column; overflow:hidden;
+    padding:10px 12px; margin-top:4px; text-align:left; box-shadow:0 3px 0 rgba(0,0,0,0.3);
+    height:180px; display:flex; flex-direction:column; overflow:hidden;
   }
-  .plaque-mini .yr{font-family:var(--mono); font-size:9.5px; color:var(--gold-dark); margin-bottom:3px; flex:0 0 auto;}
+  .plaque-mini .yr{font-family:var(--mono); font-size:11px; color:var(--gold-dark); margin-bottom:4px; flex:0 0 auto;}
   .plaque-mini h4{
-    font-family:var(--display); font-size:13px; font-weight:600; margin-bottom:2px; color:var(--ink);
+    font-family:var(--display); font-size:16px; font-weight:600; margin-bottom:4px; color:var(--ink);
     display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; flex:0 0 auto;
   }
   .plaque-mini p{
-    font-size:10.5px; color:var(--ink-soft); line-height:1.4;
-    display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4; overflow:hidden;
+    font-size:12.5px; color:var(--ink-soft); line-height:1.45;
+    display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:5; overflow:hidden;
   }
 
   /* ===== PROJECTS — regal gallery wall ===== */
@@ -343,9 +344,46 @@
   .case-table ul{ margin:0; padding-left:16px; }
   .case-table li{ margin-bottom:2px; }
   .case-table li:last-child{ margin-bottom:0; }
+  .case-table tr.highlight td{ background:rgba(91,20,32,0.08); }
+  .case-table tr.highlight td:first-child{ color:var(--maroon); }
 
   .section-media{ margin:12px 0 4px; }
   .section-media .media-frame{ height:150px; }
+
+  .case-stats{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:1px;
+    background:var(--stone-dark); border:1.5px solid var(--stone-dark); border-radius:6px;
+    overflow:hidden; margin:14px 0;
+  }
+  .case-stat{ background:var(--plaque); padding:16px 14px; }
+  .case-stat .num{ font-family:var(--display); font-weight:700; font-size:24px; color:var(--maroon); line-height:1; }
+  .case-stat .label{ font-size:11.5px; color:var(--ink-soft); margin-top:6px; line-height:1.4; }
+
+  .case-cards{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 4px; }
+  .case-card{ background:var(--stone); border:1.5px solid var(--stone-dark); border-radius:8px; padding:14px 16px; }
+  .case-card h5{ font-family:var(--display); font-size:14px; font-weight:600; color:var(--ink); margin:0 0 4px; }
+  .case-card p{ font-size:12.5px; color:var(--ink-soft); margin:0; line-height:1.5; }
+
+  /* ===== INFO DESK — contact ===== */
+  .info-desk{
+    position:relative; overflow:hidden;
+    background: radial-gradient(ellipse at 50% 0%, #1E3641, var(--wall-2) 70%);
+    padding-bottom:16px;
+  }
+  .info-desk-illustration{
+    display:block; margin:0 auto; max-width:340px; width:100%; height:auto;
+    padding-top:36px; filter:drop-shadow(0 14px 18px rgba(0,0,0,0.4));
+  }
+  .contact-links{ display:flex; flex-wrap:wrap; gap:14px; padding:0 42px 44px; }
+  .contact-link{
+    font-family:var(--display); font-weight:600; font-size:14px; color:var(--ink);
+    background:var(--gold-light); border:2.5px solid var(--ink); border-radius:30px;
+    padding:12px 26px; text-decoration:none; display:inline-flex; align-items:center; gap:9px;
+    transition:background 0.15s, transform 0.15s, border-color 0.15s;
+  }
+  .contact-link:hover{ background:var(--gold); border-color:var(--gold-dark); transform:translateY(-2px); }
+  .contact-link .contact-icon{ width:18px; height:18px; flex:0 0 auto; border-radius:4px; }
+  .contact-link svg.contact-icon{ color:var(--ink); border-radius:0; }
 
   footer{ padding:22px 42px; display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; font-family:var(--mono); font-size:11px; color:var(--text-light-soft); }
 
@@ -360,12 +398,14 @@
     .section-head{padding:44px 28px 18px;}
     .projects-wrap{padding-left:28px; padding-right:28px;}
     .timeline-track{padding:0 28px;}
+    .contact-links{padding:0 28px 36px;}
     nav.topbar{padding:16px 24px;}
   }
 
   @media (max-width:600px){
     .hero{padding:32px 20px 0;}
     .museum-illustration{max-width:420px;}
+    .info-desk-illustration{max-width:260px;}
     .hall{padding:20px 20px 36px;}
     .ticket{padding:26px 24px; max-width:100%;}
     .ticket h1{font-size:clamp(26px,8vw,34px);}
@@ -379,8 +419,11 @@
 
     .timeline-track{padding:0 12px;}
     .pedestal-row{padding:20px 6px 34px; gap:22px;}
-    .pedestal-unit{flex:0 0 170px;}
-    .plaque-mini{height:150px;}
+    .pedestal-unit{flex:0 0 195px;}
+    .plaque-mini{height:195px;}
+    .case-stage{height:120px;}
+    .display-case{width:100px; height:88px;}
+    .logo-monogram{width:60px; height:60px;}
     .scroll-arrow{width:36px; height:36px; font-size:16px;}
     .scroll-arrow.left{margin-right:6px;}
     .scroll-arrow.right{margin-left:6px;}
@@ -389,6 +432,8 @@
     .projects-wrap{padding:26px 20px 0;}
     .placard h3{font-size:16px;}
     .placard .one-liner{font-size:12.5px;}
+    .contact-links{padding:0 20px 30px; gap:10px;}
+    .contact-link{padding:11px 20px; font-size:13px;}
 
     .case-head{padding:20px 22px;}
     .case-head h2{font-size:21px;}
@@ -398,6 +443,7 @@
     .media-item .media-frame{height:150px;}
     .case-body{padding:20px 22px 30px;}
     .case-grid{grid-template-columns:1fr 1fr; gap:14px 20px;}
+    .case-cards{grid-template-columns:1fr;}
 
     .overlay{padding:20px 12px;}
 

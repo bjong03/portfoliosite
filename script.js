@@ -131,38 +131,176 @@ function toggleMenu(){
       ]
     },
     ex02: {
-      ticket:'EX-02', category:'Work Project', title:'Public API Launch',
-      role:'Product Manager', timeline:'Q4 2022 — 10 wks', team:'3 eng, 1 design',
-      skills:['REST','OAuth2','Postman','Stripe'],
-      awards:[],
-      links:[{label:'API docs', url:'#'}],
-      media:[
-        {type:'diagram', src:'https://placehold.co/700x420/EAF1E3/241D14?text=API+Architecture+Diagram', caption:'Public API request flow'},
-        {type:'image', src:'https://placehold.co/700x420/D98B76/241D14?text=Developer+Portal+Screenshot', caption:'Self-serve developer portal'}
-      ],
+      ticket:'EX-02', category:'Capstone', title:'TRASH-E',
+      role:'Product Manager & Software Developer', timeline:'Sep 2023 - May 2024', team:'2 mechanical engineers, 1 electrical engineer, 1 computer engineer',
+      skills:['User Interviews','Needs → Specs Traceability','MVP Scoping','Weighted Decision Matrices','Validation & Verification','Socio-Economic Impact Assessment','Budget Ownership','Stakeholder Pitching','ArduPilot','Mission Planner','MAVLink','GPS Waypoint Navigation','Python / Flask','Intel RealSense D455','Raspberry Pi 5','Arduino','HTTP / UDP Streaming'],
+      awards:['1st Place Sustainability Category @ CSME 2025 National Design Competition', 'Runner-Up Collegiate Prototype @ 2024 Canada Tech Futures Challenge', 'Biggest Pivot Since Pitch @ 2024 Canada Tech Futures Challenge'],
+      links:[],
+      media:[],
       sections:[
-        {title:'Problem', blocks:[{type:'p', text:'Partners wanted programmatic access to core platform data, but every integration was a bespoke, hand-built pipeline that took weeks to ship.'}]},
-        {title:'Approach', blocks:[{type:'p', text:'Defined a versioned REST API surface, prioritized endpoints by partner demand, and shipped a self-serve developer portal with sandbox keys.'}]},
-        {title:'Outcome', blocks:[{type:'p', text:'Cut new integration time from ~6 weeks to 3 days and became the primary path for all new partner integrations.'}]}
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'Cleanup products overwhelmingly skim surface debris — but research across 23 countries shows plastic density is highest in small waterways, and most of it settles on the lakebed. Today the only way it comes out is by volunteer scuba divers searching blindly by hand, exposed to decompression sickness, hypothermia, and drowning risk with every extra minute underwater.'},
+            {type:'stats', items:[
+              {value:'1M + 100K', label:'Seabirds and marine animals killed by plastic pollution each year'},
+              {value:'27,000 kg', label:'Trash pulled from BC waterways by our partner divers (DCLO) since 2013 — all by hand'},
+              {value:'~160 min', label:'A typical dive expedition, much of it wasted searching instead of collecting'}
+            ]}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'Our primary user was Henry Wang, founder of Divers for Cleaner Lakes and Oceans. A 1.5-hour discovery interview, continuous validation loops, and real dive footage were synthesized into 9 requirements and 15 measurable specifications — every design decision traceable back to a user need.'},
+            {type:'cards', items:[
+              {title:'Insight 1 — Safe time underwater is the scarcest resource', text:'Searching for trash burns most of a dive. → Move the search above the surface with a live underwater camera feed.'},
+              {title:'Insight 2 — Hauling to shore breaks the workflow', text:'Divers carry loads back mid-dive. → A winch-lowered mesh basket lets divers deposit trash on the spot.'},
+              {title:'Insight 3 — Users are non-technical volunteers', text:'MindFuel mentorship reinforced it. → Shore-side assistant runs missions from a simple map-and-video interface.'}
+            ]}
+          ]
+        },
+        {
+          title:'Competitive/Market Analysis',
+          blocks:[
+            {type:'p', text:'We benchmarked TRASH-E against the realistic alternatives a volunteer dive organization actually has access to today:'},
+            {type:'table', headers:['Alternative','Where it falls short'], rows:[
+              ['Manual volunteer diving (status quo)', 'Dangerous and slow. Divers search blindly and are limited to what one person can carry.'],
+              ['Surface skimmers', 'Only touch floating debris. Mr. Trash Wheel–style collectors miss the majority of waste on the lakebed.'],
+              ['Commercial ROVs', 'Expensive and underpowered. ~$240 USD per thruster alone; built for inspection, not bulk trash hauling.'],
+              ['Trolling-motor craft', 'Cost-prohibitive, no recovery capability. $200+ CAD per motor with no answer for sunken trash.']
+            ]},
+            {type:'p', text:'TRASH-E owns an underserved niche: sub-surface trash recovery as a diver-assist tool, built for volunteer-organization budgets. At ~$1,535 in prototype cost, it undercuts commercial ROV platforms by an order of magnitude while doing a job no incumbent performs.'}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'A 4′×4′, ~50 lb semi-autonomous pontoon craft that separates finding and hauling from the diver\'s job — a winch lowers a weighted mesh basket to depths of 10 m.'},
+            {type:'p', text:'User workflow across a mission:'},
+            {type:'cards', items:[
+              {title:'1. Survey the lakebed', text:'User scans via live underwater camera feed — before anyone enters the water.'},
+              {title:'2. Drop waypoints', text:'Trash sightings become GPS waypoints on a mission map.'},
+              {title:'3. Autonomous escort', text:'TRASH-E navigates waypoint to waypoint; the diver deposits trash in the lowered basket.'},
+              {title:'4. Return & unload', text:'Craft autonomously hauls the full load back to shore.'}
+            ]},
+            {type:'p', text:'Key engineering and product decisions along the way:'},
+            {type:'cards', items:[
+              {title:'Scoping call — Semi-autonomy first', text:'Full autonomy was infeasible in our timeframe — so we automated the highest-risk, highest-time-cost parts of the workflow (search and hauling) first.'},
+              {title:'Build vs. adopt — Pivot to ArduPilot', text:'Our custom Arduino GPS/compass navigation hit only ±20 m accuracy. A weighted decision matrix drove a pivot to open-source ArduPilot + Mission Planner — reliable waypoint navigation without rebuilding it ourselves.'},
+              {title:'Cost engineering — Scooter motors, not thrusters', text:'Commercial options were too expensive or too weak — we adapted 24V scooter motors with a custom belt-driven propeller assembly.'},
+              {title:'Iteration — Redesign for real users', text:'After buoyancy and transport failures, a redesign to a 4′×4′ plywood platform halved platform weight and made the craft carryable by 1–2 people in four modules.'}
+            ]}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'p', text:'Across 15 specifications and 6 test campaigns: 8 passed outright (buoyant with 20+ lb loads, ~5 h runtime, 720p video streaming, GPS waypoint mapping, eco-safe materials, 3D-printable spares), 4 were a conditional pass pending longer-term verification (100 m telemetry range, corrosion resistance, packet throughput, material durability), and 3 were deferred to the DCLO field pilot due to shallow test-site conditions.'},
+            {type:'stats', items:[
+              {value:'−50%', label:'Estimated reduction in diver time underwater'},
+              {value:'2,500 lbs', label:'Additional trash removable from BC waterways per year'},
+              {value:'2×', label:'Battery life vs. a typical cleanup operation'},
+              {value:'$931', label:'Delivered under our $2,466 budget'}
+            ]},
+            {type:'quote', text:'Strongest signal of product–user fit: after seeing the prototype and test footage, Henry Wang invited the team to deploy TRASH-E on a real multi-day cleanup expedition on the Sunshine Coast — from prototype to committed pilot with the target user.'}
+          ]
+        }
       ]
     },
     ex03: {
-      ticket:'EX-03', category:'Work Project', title:'Pricing Experiment',
-      role:'Product Manager', timeline:'Q1 2023 — 6 wks', team:'1 eng, 1 data analyst',
-      skills:['SQL','Amplitude','Excel'],
+      ticket:'EX-03', category:'Personal Project', title:'SentryFlame',
+      role:'Product Design & Development', timeline:'[add project timeline]', team:'[add team size/composition]',
+      skills:['Bentley iTwin','React','TypeScript','API Design & Integration','IoT Sensor Integration','UI/UX Design','Agentic AI','Market & Regulatory Research','Business Modeling'],
       awards:[],
       links:[],
-      media:[
-        {type:'diagram', src:'https://placehold.co/700x420/EAF1E3/241D14?text=Pricing+Test+Results', caption:'Willingness-to-pay curve by segment'}
-      ],
+      media:[{type:'embed', src:'https://www.youtube.com/embed/erl88wfBXnc', caption:'SentryFlame Demo Video'}],
       sections:[
-        {title:'Problem', blocks:[{type:'p', text:'Willingness-to-pay was unclear across customer segments, and pricing had not been revisited since launch.'}]},
-        {title:'Approach', blocks:[{type:'p', text:'Ran a van Westendorp pricing study alongside a live holdout test on a subset of new signups to validate elasticity assumptions.'}]},
-        {title:'Outcome', blocks:[{type:'p', text:'Identified a segment-specific price point that lifted revenue per account without materially changing conversion.'}]}
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'Firefighters responding to structure fires typically work with outdated tools — printed 2D floorplans or, at best, static 3D layouts on tablets — with no real-time hazard data and no visibility into where occupants are inside the building. Fire alarm panels show which zone triggered an alarm but nothing about live conditions, and there is minimal data sharing across Fire, EMS, and Police. This lack of situational awareness costs time locating victims, leads to poorer tactical decisions, and increases risk to both residents and first responders.'},
+            {type:'stats', items:[
+              {value:'80%', label:'of structure fires happen in residential buildings'},
+              {value:'92%', label:'of injuries in this category occur in those buildings'},
+              {value:'84%', label:'of deaths in this category occur in those buildings'}
+            ]},
+            {type:'p', text:'Fire intensity also grows non-linearly: a fire is still manageable at 3–4 minutes, but by the 9-minute mark — close to the typical 7–8 minute emergency response window — one additional minute can turn catastrophic. Every minute saved in situational awareness and response time directly reduces damage, injury, and loss of life.'},
+            {type:'stats', items:[
+              {value:'3–4 min', label:'Fire still manageable'},
+              {value:'7–8 min', label:'Typical response window'},
+              {value:'9 min', label:'One more minute can turn fatal'}
+            ]},
+            {type:'p', text:'This is also a well-funded, receptive market: $7.4M is available provincially for modern firefighting equipment, with roughly $250M available nationwide for fire-modernization funding in Canada — meaning the barrier to adoption isn\'t budget, it\'s the availability of a credible modern tool.'}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'The team conducted direct consultations with two fire departments — Vancouver Fire Department (VFD) and a second department (TFD) — to validate current-state pain points before building. Key findings from these conversations:'},
+            {type:'list', items:[
+              'Most crews rely on PDF floorplans or, at best, basic 3D layouts on tablets — nothing dynamic or real-time',
+              'Fire alarm panels only communicate zone-level alerts, not precise or evolving hazard locations',
+              'There is no live hazard tracking once a fire starts, so crews\' mental models go stale the moment they\'re wrong',
+              'There is little to no cross-agency data sharing between Fire, EMS, and Police, creating coordination gaps at the exact moment coordination matters most'
+            ]},
+            {type:'p', text:'These insights directly shaped the intervention: rather than another static pre-incident plan viewer, SentryFlame needed to deliver live, sensor-driven building state, with a design built around the specific decisions firefighters make in the first minutes on scene — where\'s the fire, who\'s trapped, which exits are blocked, who needs help first.'},
+            {type:'p', text:'Beyond the primary Fire/EMS/Police user group, the team identified adjacent stakeholders whose needs shaped the business model and go-to-market: commercial real estate owners, industrial facility managers, insurance companies, and property managers seeking risk reduction and operational continuity — all groups with dedicated safety/emergency-preparedness budgets.'}
+          ]
+        },
+        {
+          title:'Competitive/Market Analysis',
+          blocks:[
+            {type:'p', text:'SentryFlame was benchmarked against players across three adjacent categories — early detection, smart-building management, and monitored suppression — plus the fire-panel installers that represent the entrenched status quo.'},
+            {type:'table', headers:['Competitor','Category','Setup Cost','Ongoing Cost','Key Gap'], highlightRow:5, rows:[
+              ['Honeywell','Early detection / compliance checks','$12K–$30K','~$2K/yr','No live floorplans, no occupant alerts, no AI-guided evacuation routing'],
+              ['Siemens Desigo CC','Smart building management','~$70K–$100K (excl. install)','$5K–$15K/yr','Building-management tool, not visualization-first; only a sensor list + map pins, no live floorplans, no AI routing'],
+              ['Fire Rover','24/7 monitored suppression','~$200K','~$32K/yr','Requires constant human monitoring; very high labor cost'],
+              ['Mappedin','Mapping SaaS','—','Up to $165/map/month','Mapping only, no live sensor/hazard integration'],
+              ['Honeywell Fire Lite (via installer)','Legacy fire panel','$2K panel + $6K–$30K install','—','Pinpoints only which room, no live sensors, no maps, and often needs incompatible-sensor replacement'],
+              ['SentryFlame','Live digital twin + AI evacuation','$1K–$3K hardware','$3.6K–$14.4K/yr','—']
+            ]},
+            {type:'p', text:'Every incumbent solves one slice of the problem — detection, building management, or suppression monitoring — but none combine a live, occupant-aware 3D digital twin with AI-driven evacuation guidance at a price point accessible to individual departments and buildings. SentryFlame\'s retrofit path (under $5 per legacy sensor converted) also removes the biggest adoption blocker competitors ignore: most buildings already have non-compatible smoke detectors, and full sensor replacement is often the most expensive line item in a competitor\'s quote.'},
+            {type:'p', text:'The public safety tech market is projected to reach $36.5B by 2030. In Canada alone, ~$250M in fire-modernization funding is earmarked, and the team has an early relationship with UBC through Third Quadrant as a potential pilot/validation partner.'}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'SentryFlame is a live digital twin for structure fires, built on Bentley\'s iTwin platform, that gives first responders real-time situational awareness before and during entry.'},
+            {type:'cards', items:[
+              {title:'Live 3D digital twin', text:'Real-time building layouts with tactical overlays, viewable en route or on scene, built from Bentley iTwin + a custom React/TypeScript viewer.'},
+              {title:'Sensor-driven alerts', text:'Smoke detectors and CCTV feeds populate three alert types on the live floorplan — fire detected, blocked exit, and lost device signal.'},
+              {title:'Digital emergency fire plan', text:'A side panel with active Alerts, a live occupant Directory flagging high-risk residents, and consolidated Emergency Contacts.'},
+              {title:'SentryPal, AI companion', text:'Summarizes active alerts and generates an optimized evacuation plan that prioritizes occupants with medical conditions and routes around blocked exits.'},
+              {title:'Low-cost retrofit path', text:'Converts existing legacy smoke detectors to be IoT-compatible for under $5/device, removing the main integration barrier competitors face.'},
+              {title:'Dual-use design', text:'Beyond live emergencies, the same platform doubles as a training/simulation tool so crews can build tactical familiarity before they\'re ever dispatched.'}
+            ]},
+            {type:'p', text:'Business model: a hybrid hardware + SaaS approach. A one-time hardware install ($1K–$3K per site) plus a tiered monthly/annual subscription starting at $300/mo, with bundled pricing available for city-wide multi-building deployments.'}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'stats', items:[
+              {value:'$210M', label:'Property damage avoided annually'},
+              {value:'101', label:'Lives impacted per year'},
+              {value:'$90M', label:'Medical + insurance cost savings'},
+              {value:'10–20×', label:'Projected customer ROI per site'},
+              {value:'$100K+', label:'Annual savings per site'}
+            ]},
+            {type:'list', items:[
+              'De-risked adoption path: compatible with any existing smoke detector configuration via a sub-$5 retrofit, removing the largest cost/integration barrier seen in competitor deployments',
+              'Validated demand: direct engagement with VFD and TFD confirmed the core pain points, alongside $7.4M in provincial and ~$250M in national Canadian funding earmarked for this kind of modernization',
+              'Planned rollout: Q4 2025 finalize IoT hardware + agentic AI → Q1 2026 launch fire-code compliance tools → Q2 2026 pilot with Vancouver Fire Department → Q3 2026 begin full customer onboarding',
+              'Supports SDG 3 (Good Health & Well-being), SDG 8 (Decent Work & Economic Growth), SDG 9 (Industry & Innovation), and SDG 11 (Sustainable Cities & Communities)'
+            ]}
+          ]
+        }
       ]
     },
     ex04: {
-      ticket:'EX-04', category:'Work Project', title:'Mobile Redesign',
+      ticket:'EX-04', category:'Capstone', title:'Heat Stroke Prevention Vest',
       role:'Product Designer & PM', timeline:'Q3 2023 — 12 wks', team:'2 design, 3 eng',
       skills:['Figma','SwiftUI','Kotlin'],
       awards:['Internal Design Award — Q3 2023'],
@@ -328,8 +466,9 @@ function toggleMenu(){
     }
 
     const tbody = document.createElement('tbody');
-    table.rows.forEach(function(row){
+    table.rows.forEach(function(row, rowIndex){
       const tr = document.createElement('tr');
+      if(table.highlightRow === rowIndex) tr.className = 'highlight';
       row.forEach(function(cell){
         const td = document.createElement('td');
         if(Array.isArray(cell)){
@@ -381,6 +520,38 @@ function toggleMenu(){
         wrap.appendChild(ul);
       } else if(block.type === 'table'){
         wrap.appendChild(buildTable(block));
+      } else if(block.type === 'stats'){
+        const grid = document.createElement('div');
+        grid.className = 'case-stats';
+        block.items.forEach(function(stat){
+          const tile = document.createElement('div');
+          tile.className = 'case-stat';
+          const num = document.createElement('div');
+          num.className = 'num';
+          num.textContent = stat.value;
+          const label = document.createElement('div');
+          label.className = 'label';
+          label.textContent = stat.label;
+          tile.appendChild(num);
+          tile.appendChild(label);
+          grid.appendChild(tile);
+        });
+        wrap.appendChild(grid);
+      } else if(block.type === 'cards'){
+        const grid = document.createElement('div');
+        grid.className = 'case-cards';
+        block.items.forEach(function(card){
+          const el = document.createElement('div');
+          el.className = 'case-card';
+          const h5 = document.createElement('h5');
+          h5.textContent = card.title;
+          const p = document.createElement('p');
+          p.textContent = card.text;
+          el.appendChild(h5);
+          el.appendChild(p);
+          grid.appendChild(el);
+        });
+        wrap.appendChild(grid);
       } else if(block.type === 'media'){
         const grid = buildMediaGrid(block.items);
         if(grid){
