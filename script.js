@@ -191,6 +191,7 @@ function toggleMenu(){
       awards:['1st Place Sustainability Category @ CSME 2025 National Design Competition', 'Runner-Up Collegiate Prototype @ 2024 Canada Tech Futures Challenge', 'Biggest Pivot Since Pitch @ 2024 Canada Tech Futures Challenge'],
       links:[
         {label:'Engineering Report', url:'https://docs.google.com/document/d/1Iuzk2diPuAMpJUD0vQ7LzsTqhW6wU8BtM5if2e2bgEI/edit?usp=sharing'},
+        {label: 'Poster', url: 'https://drive.google.com/file/d/1_0cx4J_uG_fQZ1mQORJRDQEGIZwFU2nY/view?usp=sharing'},
         {label: 'CSME Award Announcement', url: 'https://www.linkedin.com/posts/brandon-jong_csme2025-designcompetition-engineeringinnovation-activity-7337871602350440449-iKLY?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'},
         {label: 'Tech Futures Challenge Award Announcement', url: 'https://www.linkedin.com/posts/brandon-jong_with-transformer-partners-like-cenovus-energy-activity-7204859713853804544-dM8J?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'}
       ],
