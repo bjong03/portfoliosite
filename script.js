@@ -54,10 +54,13 @@ function toggleMenu(){
   const PROJECTS = {
     ex01: {
       ticket:'EX-01', category:'Capstone', title:'Haven',
-      role:'Product Manager and Software Developer', timeline:'Sep 2025 - Apr 2026', team:'2 mech eng, 1 elec/cpen eng',
+      role:'Product Manager & Software Developer', timeline:'Sep 2025 - Apr 2026', team:'2 Mechanical Engineers, 1 Electrical/Computer Engineer',
       skills:['Engineering Project Management','Product Strategy','Feature Prioritization','User Research','UI/UX Design','Hardware System Testing','React','FastAPI','SQLite','Docker','MQTT','Raspberry Pi 4','ESP32','RFID','Figma'],
       awards: ['Argosy Foundation VC Grant ($2000 USD)'],
-      links:[{label:'Case study deck', url:'#'}],
+      links:[
+        {label:'Engineering Report', url:'https://drive.google.com/file/d/1bw5kBbUnshUirfodx3Mhc8-gNz3PR8e-/view?usp=sharing'},
+        {label: "Poster", url: 'https://drive.google.com/file/d/1JAH2OTdtHuXqIyjURKjGgCbuZfL7vtOy/view?usp=sharing'}
+      ],
       media:[
         {type:'embed', src:'https://drive.google.com/file/d/1JKAa2pRLLg5ju3PzHHLY6Y0tavtb8FOu/preview', caption:'Haven demo — tool dispense'},
         {type:'embed', src:'https://drive.google.com/file/d/1_gDuCNytxGZa6KlN6M9dPfg-RM9f4aUB/preview', caption:'Haven demo — tool return'}
@@ -88,7 +91,7 @@ function toggleMenu(){
           ]
         },
         {
-          title:'Competitive/Market Analysis',
+          title:'Competitor/Market Analysis',
           blocks:[
             {type:'p', text:'In the market, there are three main types of systems: self-serve lockers, electronically controlled toolboxes, and asset management software. Representative brands from each type of system were compared amongst each other to identify gaps:'},
             {type:'table', headers:['','Robocrib','kabTRAK','gigatrak'], rows:[
@@ -132,10 +135,14 @@ function toggleMenu(){
     },
     ex02: {
       ticket:'EX-02', category:'Capstone', title:'TRASH-E',
-      role:'Product Manager & Software Developer', timeline:'Sep 2023 - May 2024', team:'2 mechanical engineers, 1 electrical engineer, 1 computer engineer',
-      skills:['User Interviews','Needs → Specs Traceability','MVP Scoping','Weighted Decision Matrices','Validation & Verification','Socio-Economic Impact Assessment','Budget Ownership','Stakeholder Pitching','ArduPilot','Mission Planner','MAVLink','GPS Waypoint Navigation','Python / Flask','Intel RealSense D455','Raspberry Pi 5','Arduino','HTTP / UDP Streaming'],
+      role:'Product Manager & Software Developer', timeline:'Sep 2023 - May 2024', team:'2 Mechanical Engineers, 1 Electrical Engineer, 1 Computer Engineer',
+      skills:['User Interviews','Needs Assessment','MVP Scoping','Weighted Decision Matrices','Validation & Verification','Socio-Economic Impact Assessment','Budget Ownership','Stakeholder Pitching','ArduPilot','Mission Planner','GPS Waypoint Navigation','Python / Flask','Intel RealSense D455','Raspberry Pi 5','HTTP / UDP Streaming'],
       awards:['1st Place Sustainability Category @ CSME 2025 National Design Competition', 'Runner-Up Collegiate Prototype @ 2024 Canada Tech Futures Challenge', 'Biggest Pivot Since Pitch @ 2024 Canada Tech Futures Challenge'],
-      links:[],
+      links:[
+        {label:'Engineering Report', url:'https://docs.google.com/document/d/1Iuzk2diPuAMpJUD0vQ7LzsTqhW6wU8BtM5if2e2bgEI/edit?usp=sharing'},
+        {label: 'CSME Award Announcement', url: 'https://www.linkedin.com/posts/brandon-jong_csme2025-designcompetition-engineeringinnovation-activity-7337871602350440449-iKLY?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'},
+        {label: 'Tech Futures Challenge Award Announcement', url: 'https://www.linkedin.com/posts/brandon-jong_with-transformer-partners-like-cenovus-energy-activity-7204859713853804544-dM8J?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'}
+      ],
       media:[],
       sections:[
         {
@@ -143,7 +150,7 @@ function toggleMenu(){
           blocks:[
             {type:'p', text:'Cleanup products overwhelmingly skim surface debris — but research across 23 countries shows plastic density is highest in small waterways, and most of it settles on the lakebed. Today the only way it comes out is by volunteer scuba divers searching blindly by hand, exposed to decompression sickness, hypothermia, and drowning risk with every extra minute underwater.'},
             {type:'stats', items:[
-              {value:'1M + 100K', label:'Seabirds and marine animals killed by plastic pollution each year'},
+              {value:'1M+', label:'Seabirds and marine animals killed by plastic pollution each year'},
               {value:'27,000 kg', label:'Trash pulled from BC waterways by our partner divers (DCLO) since 2013 — all by hand'},
               {value:'~160 min', label:'A typical dive expedition, much of it wasted searching instead of collecting'}
             ]}
@@ -161,7 +168,7 @@ function toggleMenu(){
           ]
         },
         {
-          title:'Competitive/Market Analysis',
+          title:'Competitor/Market Analysis',
           blocks:[
             {type:'p', text:'We benchmarked TRASH-E against the realistic alternatives a volunteer dive organization actually has access to today:'},
             {type:'table', headers:['Alternative','Where it falls short'], rows:[
@@ -210,10 +217,13 @@ function toggleMenu(){
     },
     ex03: {
       ticket:'EX-03', category:'Personal Project', title:'SentryFlame',
-      role:'Product Design & Development', timeline:'[add project timeline]', team:'[add team size/composition]',
+      role:'Product Manager & Software Developer', timeline:'June 2025 - July 2025', team:'1 Business Analyst',
       skills:['Bentley iTwin','React','TypeScript','API Design & Integration','IoT Sensor Integration','UI/UX Design','Agentic AI','Market & Regulatory Research','Business Modeling'],
-      awards:[],
-      links:[],
+      awards:['3rd Place @ 2025 Enactus Canada x Bentley iTwin4Good National Competition'],
+      links:[
+        {label: 'Pitch Deck', url: 'https://pitch.com/v/sentryflame-pztj3a'},
+        {label:'Enactus Award Announcement', url: 'https://www.linkedin.com/posts/announcing-the-top-three-teams-from-the-canadian-share-7356737953924046848-H1FL/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'}
+      ],
       media:[{type:'embed', src:'https://www.youtube.com/embed/erl88wfBXnc', caption:'SentryFlame Demo Video'}],
       sections:[
         {
@@ -237,19 +247,19 @@ function toggleMenu(){
         {
           title:'User Research',
           blocks:[
-            {type:'p', text:'The team conducted direct consultations with two fire departments — Vancouver Fire Department (VFD) and a second department (TFD) — to validate current-state pain points before building. Key findings from these conversations:'},
-            {type:'list', items:[
-              'Most crews rely on PDF floorplans or, at best, basic 3D layouts on tablets — nothing dynamic or real-time',
-              'Fire alarm panels only communicate zone-level alerts, not precise or evolving hazard locations',
-              'There is no live hazard tracking once a fire starts, so crews\' mental models go stale the moment they\'re wrong',
-              'There is little to no cross-agency data sharing between Fire, EMS, and Police, creating coordination gaps at the exact moment coordination matters most'
+            {type:'p', text:'The team conducted direct consultations with two fire departments — Vancouver Fire Department (VFD) and Toronto Fire Department (TFD) — to validate current-state pain points before building. Key findings from these conversations:'},
+            {type:'cards', items:[
+              {title:'Static, outdated floorplans', text:'Most crews rely on PDF floorplans or, at best, basic 3D layouts on tablets — nothing dynamic or real-time.'},
+              {title:'Zone-level alerts only', text:'Fire alarm panels only communicate zone-level alerts, not precise or evolving hazard locations.'},
+              {title:'No live hazard tracking', text:'There is no live hazard tracking once a fire starts, so crews\' mental models go stale the moment they\'re wrong.'},
+              {title:'No cross-agency data sharing', text:'There is little to no cross-agency data sharing between Fire, EMS, and Police, creating coordination gaps at the exact moment coordination matters most.'}
             ]},
             {type:'p', text:'These insights directly shaped the intervention: rather than another static pre-incident plan viewer, SentryFlame needed to deliver live, sensor-driven building state, with a design built around the specific decisions firefighters make in the first minutes on scene — where\'s the fire, who\'s trapped, which exits are blocked, who needs help first.'},
             {type:'p', text:'Beyond the primary Fire/EMS/Police user group, the team identified adjacent stakeholders whose needs shaped the business model and go-to-market: commercial real estate owners, industrial facility managers, insurance companies, and property managers seeking risk reduction and operational continuity — all groups with dedicated safety/emergency-preparedness budgets.'}
           ]
         },
         {
-          title:'Competitive/Market Analysis',
+          title:'Competitor/Market Analysis',
           blocks:[
             {type:'p', text:'SentryFlame was benchmarked against players across three adjacent categories — early detection, smart-building management, and monitored suppression — plus the fire-panel installers that represent the entrenched status quo.'},
             {type:'table', headers:['Competitor','Category','Setup Cost','Ongoing Cost','Key Gap'], highlightRow:5, rows:[
@@ -301,10 +311,13 @@ function toggleMenu(){
     },
     ex04: {
       ticket:'EX-04', category:'Capstone', title:'Heat Stroke Prevention Vest',
-      role:'Product Manager & Hardware Engineer', timeline:'Oct 2022 - Apr 2023', team:'6-person capstone team (IGEN 230)',
-      skills:['Arduino Uno (C/C++)','DHT11 Sensor','LM35 Sensors','Servo Motor Control','Circuit Design','CAD Modeling','3D Printing','Material Selection (PLA vs. Resin)','Iterative Prototyping','Requirements Definition','C-Sketch Ideation','Weighted Decision Matrix','AHP Scoring','Thermodynamic Calculations','Rule-Based Algorithm Design','Human-Subject Trials','IP-Rating Waterproof Testing','Survey Design & Analysis','Field Validation','PVA Evaporative Fabric Properties'],
+      role:'Product Manager & Hardware Engineer', timeline:'Oct 2022 - Apr 2023', team:'2 mechanical engineers, 1 materials engineer, 2 computer engineers',
+      skills:['Arduino Uno (C/C++)','Sensor Integration','Circuit Design','CAD Modeling','3D Printing','Material Selection','Thermodynamics','Rule-Based Algorithm Design','Human-Subject Trials','IP-Rating Waterproof Testing','Survey Design & Analysis','Field Validation'],
       awards:[],
-      links:[],
+      links:[
+        {label:'Engineering Report', url:'https://drive.google.com/file/d/1LU_JkUHvjhoemdLvZcn8KXMX5s377_7S/view?usp=sharing'},
+        {label: "Poster", url: 'https://drive.google.com/file/d/15BEqtnWq2fU8VXHSMZz_pZJSxKUxUTA3/view?usp=sharing'}
+      ],
       media:[
         {type:'embed', src:'https://www.youtube.com/embed/4svBX57A8I4', caption:'Heat Stroke Prevention Vest — Demo'}
       ],
@@ -332,7 +345,7 @@ function toggleMenu(){
           ]
         },
         {
-          title:'Competitive/Market Analysis',
+          title:'Competitor/Market Analysis',
           blocks:[
             {type:'p', text:'The personal cooling vest market splits into four established categories — each requires the wearer to manually activate or recharge it:'},
             {type:'table', headers:['Category','Strength','Weakness'], rows:[
