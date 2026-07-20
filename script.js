@@ -69,24 +69,33 @@ function toggleMenu(){
         {
           title:'Problem',
           blocks:[
-            {type:'p', text:'The Integrated Engineering Shop (IGEN Shop) is the only student-run makerspace at the University of British Columbia (UBC). The shop supports over 250 users and 30+ capstone projects each year, creating an environment where tools are frequently moved, misplaced, or stolen. Over the past two years, the IGEN Shop has accumulated over $3,000 in tool losses. While there are existing industry solutions, they are either prohibitively expensive (over $95,000), lack necessary security features, or fail to integrate seamlessly into makerspace environments. This reveals a gap: small shops need effective and affordable solutions for tool tracking and loss prevention.'},
-            {type:'quote', text:'Our goal was simple: design an affordable smart tool vending machine for on-campus workshops that can dispense and track tools in real time, minimizing theft or loss.'},
-            {type:'media', items:[
-              {type:'diagram', src:'images/media/ex01/problem-stats.png', caption:'$3,000 in tool losses, $95K+ commercial solutions, and a clear need for tracking'}
-            ]}
+            {type:'p', text:'The Integrated Engineering Shop (IGEN Shop) is the only student-run makerspace at the University of British Columbia (UBC). The shop supports over 250 users and 30+ capstone projects each year, creating an environment where tools are frequently moved, misplaced, or stolen. While there are existing industry solutions, they are either prohibitively expensive, lack necessary security features, or fail to integrate seamlessly into makerspace environments. This reveals a gap: small shops need effective and affordable solutions for tool tracking and loss prevention.'},
+            {type:'stats', items:[
+              {value:'$3,000+', label:'Tool losses accumulated across two years'},
+              {value:'$95K+', label:'Cost of the cheapest comparable commercial system'},
+              {value:'250+', label:'Shop users sharing the same tool pool'},
+              {value:'30+', label:'Capstone teams relying on tool availability'}
+            ]},
+            {type:'quote', text:'Our goal was simple: design an affordable smart tool vending machine for on-campus workshops that can dispense and track tools in real time, minimizing theft or loss.'}
           ]
         },
         {
           title:'User Research',
           blocks:[
-            {type:'p', text:'To understand user needs, 50+ IGEN Shop supervisors and frequent student workshop users were interviewed to understand existing workflows and pain points. Through these user groups, I led the team to identify the following needs and constraints:'},
-            {type:'table', headers:['User Group','Needs','Constraints'], rows:[
-              ['IGEN Shop Supervisors',
-                ['Easy to use and maintain system with minimal training','Alert system for potential tool theft','Access control (limits on quantity, duration, and user access)','Tool tracking (who has what and for how long)'],
-                ['Must not obstruct shop space; requires wall power','Must comply with UBC FIPPA data privacy regulations']],
-              ['Student Users',
-                ['Fast interaction with minimal workflow disruption','Reliable tool availability','Intuitive, no training required interface'],
-                ['Physically accessible dispensing/return system','Future iterations of device should not affect workflow']]
+            {type:'p', text:'To understand user needs, 50+ IGEN Shop supervisors and frequent student workshop users were interviewed about existing workflows and pain points. Two personas emerged, each pulling the design in a different direction — and both had to be satisfied for the system to actually get used.'},
+            {type:'cards', items:[
+              {title:'Shop Supervisor — Operator', text:'A small student-worker team managing tool availability needs real-time visibility, instant theft alerts, and control over borrowing limits.', list:[
+                'Admin dashboard with live inventory + usage analytics',
+                'Automated overdue-tool alerts',
+                'Remote manual override of dispensing hardware',
+                'Must comply with UBC FIPPA data-privacy regulations'
+              ]},
+              {title:'Shop User — Student', text:'250+ students and capstone teams need to grab the right tool fast, trust that it will be there, and return it without extra steps.', list:[
+                'Vending-machine-style UI, zero onboarding required',
+                'Single-tool exposure per transaction, no rummaging',
+                'RFID tap + mobile web flow, 30-second cycle',
+                'Must not obstruct shop space or disrupt existing workflow'
+              ]}
             ]}
           ]
         },
@@ -106,29 +115,71 @@ function toggleMenu(){
                 ['No physical components for tool safety','Proprietary system with little documentation','Difficult to customize for makerspace needs']],
               ['Cost','$95,000 CAD','$30,000 CAD','$3,500 CAD']
             ]},
-            {type:'media', items:[
-              {type:'image', src:'images/media/ex01/competitor-robocrib.png', caption:'Robocrib — self-serve locker system'},
-              {type:'image', src:'images/media/ex01/competitor-kabtrak.png', caption:'kabTRAK — electronically controlled toolbox'},
-              {type:'image', src:'images/media/ex01/competitor-gigatrak.png', caption:'gigatrak — asset management software'}
+            {type:'stats', items:[
+              {value:'$3.3B → $5.8B', label:'Global industrial vending market, 2025 → 2030 est.'},
+              {value:'~25,000', label:'Makerspace facilities in North America — addressable market'},
+              {value:'96%', label:'Cheaper than the lowest-cost commercial alternative'}
             ]},
-            {type:'p', text:'Existing commercial systems such as RoboCrib, kabTRAK, and GigaTrak demonstrated strong inventory management capabilities but were either prohibitively expensive, difficult to customize, or designed for industrial environments rather than university makerspaces. This provides an opportunity for Haven to be designed to provide comparable accountability at a fraction of the cost while integrating directly into existing workshop workflows.'}
+            {type:'p', text:'Existing commercial systems such as RoboCrib, kabTRAK, and GigaTrak demonstrated strong inventory management capabilities but were either prohibitively expensive, difficult to customize, or designed for industrial environments rather than university makerspaces. This provides an opportunity for Haven to provide comparable accountability at a fraction of the cost while integrating directly into existing workshop workflows.'}
           ]
         },
         {
           title:'Solution',
           blocks:[
-            {type:'p', text:'Haven is a smart tool management kiosk that combines RFID authentication, a mobile web application, automated dispensing, real-time inventory tracking, and an admin dashboard to create accountability while preserving a seamless user experience. Some key features include:'},
-            {type:'list', items:['Mobile application','RFID authentication','Automated tool dispensing and returning','Admin dashboard','Real time inventory tracking','Storage of up to 30 unique handheld tools']},
+            {type:'p', text:'Haven integrates a rotary storage "tool cake," a vertical Cartesian XY delivery gantry, and a centralized Raspberry Pi control stack into one self-serve kiosk — authenticating users, exposing exactly one tool at a time, and logging every transaction automatically.'},
             {type:'media', items:[
-              {type:'diagram', src:'images/media/ex01/dispense-return-flow.png', caption:'Tool dispense and return flow, 5 steps each'}
+              {type:'diagram', src:'images/media/ex01/haven-full-assembly.png', caption:'Haven Full Assembly'}
+            ]},
+            {type:'cards', items:[
+              {title:'Mechanical — Storage & Delivery', text:'A stationary rotary "cake" (6 layers × 5 tools = 30 tools) indexes tools to an open transfer sector, where a vertical Cartesian XY gantry picks up and delivers to the user bay.', list:[
+                'Self-locking lead screws avoid continuous motor holding torque under load',
+                'Aluminum extrusion frame + polycarbonate panels for rigidity and visibility',
+                'Gantry supports ~3.5kg vs. 0.73kg design load'
+              ]},
+              {title:'Electrical — Centralized Control', text:'Migrated from a distributed per-module PCB architecture to a centralized Raspberry Pi 4 system, improving reliability and motor synchronization.', list:[
+                'Klipper firmware for deterministic multi-axis motion control',
+                'AS5600 magnetic encoders via custom I2C mux PCB',
+                'RC522 RFID authentication'
+              ]},
+              {title:'Software — Web App & Admin Console', text:'A Dockerized React/FastAPI stack drives both the student-facing mobile web app and an admin console with live inventory and camera monitoring.', list:[
+                'RFID tap → QR-linked mobile web flow, no app install required',
+                'Admin dashboard: user/tool management, overdue alerts, usage analytics',
+                'CI/CD via self-hosted GitHub Actions runner + Tailscale'
+              ]}
+            ]},
+            {type:'p', text:'Core user flow — tool dispense, RFID to retrieval:'},
+            {type:'cards', items:[
+              {title:'1 — Scan RFID card', text:'User taps their card at the kiosk to authenticate.'},
+              {title:'2 — Select tool on mobile web', text:'A QR-linked mobile page lists available tools.'},
+              {title:'3 — Gantry + rotary layer index', text:'The storage cake rotates and the gantry positions itself.'},
+              {title:'4 — Tool delivered to user bay', text:'The gantry exposes exactly one tool for pickup.'},
+              {title:'5 — Retrieval verified & logged', text:'The transaction is confirmed and logged automatically.'}
             ]}
           ]
         },
         {
           title:'Results',
           blocks:[
-            {type:'p', text:'The prototype underwent 152 integrated dispense-and-return cycles across multiple tool geometries and storage levels, achieving an overall reliability of 96%. Overall, Haven was able to:'},
-            {type:'list', items:['Support 30 distinct tools','Serve 250+ workshop users','Complete dispense/return cycle in under 30 seconds','Stay within the $3.7K CAD project budget versus commercial systems costing $30K–95K','Design modularly for future expansion']}
+            {type:'p', text:'The prototype underwent 152 integrated dispense-and-return cycles across multiple tool geometries and storage levels, achieving 93% overall reliability. Of the 10 total failures, 9 occurred during return rather than dispense — isolating the transfer/reinsertion interface as the primary area for further refinement, not the overall architecture.'},
+            {type:'table', headers:['Test Category','Result'], rows:[
+              ['Moderate tools (≤20cm)','96% success'],
+              ['Long/heavy tools (~23cm)','87% success'],
+              ['Overall system','93% success'],
+              ['Software test flows','11 / 14 flows passing']
+            ]},
+            {type:'stats', items:[
+              {value:'30s', label:'Website request → tool at user bay'},
+              {value:'3.5kg', label:'Gantry payload demonstrated (vs. 0.73kg design)'},
+              {value:'$294', label:'Under the $3,706 worst-case budget'},
+              {value:'$2,000', label:'Argosy Foundation funding secured via pitch'}
+            ]},
+            {type:'table', headers:['Specification','Target','Result'], rows:[
+              ['Footprint','≤ 2\' wide, ≤ 3\' long','Within required footprint'],
+              ['Storage capacity','≥ 30 tools','6 layers × 5 tools = 30 tools'],
+              ['Dispense cycle time','≤ 30s','30s measured end-to-end'],
+              ['Gantry payload','Handle 0.73kg','Supports ~3.5kg — exceeded'],
+              ['Tool geometry range','Varying handheld tools','96% moderate / 87% longest category']
+            ], highlightRow:3}
           ]
         }
       ]
