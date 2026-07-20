@@ -301,18 +301,113 @@ function toggleMenu(){
     },
     ex04: {
       ticket:'EX-04', category:'Capstone', title:'Heat Stroke Prevention Vest',
-      role:'Product Designer & PM', timeline:'Q3 2023 — 12 wks', team:'2 design, 3 eng',
-      skills:['Figma','SwiftUI','Kotlin'],
-      awards:['Internal Design Award — Q3 2023'],
-      links:[{label:'Prototype', url:'#'}],
+      role:'Product Manager & Hardware Engineer', timeline:'Oct 2022 - Apr 2023', team:'6-person capstone team (IGEN 230)',
+      skills:['Arduino Uno (C/C++)','DHT11 Sensor','LM35 Sensors','Servo Motor Control','Circuit Design','CAD Modeling','3D Printing','Material Selection (PLA vs. Resin)','Iterative Prototyping','Requirements Definition','C-Sketch Ideation','Weighted Decision Matrix','AHP Scoring','Thermodynamic Calculations','Rule-Based Algorithm Design','Human-Subject Trials','IP-Rating Waterproof Testing','Survey Design & Analysis','Field Validation','PVA Evaporative Fabric Properties'],
+      awards:[],
+      links:[],
       media:[
-        {type:'image', src:'https://placehold.co/700x420/C89B3C/241D14?text=Mobile+Redesign+Screens', caption:'Before / after key screens'},
-        {type:'video', src:'media/ex04-prototype-demo.mp4', poster:'https://placehold.co/700x420/8A6B2E/FBF5E6?text=Prototype+Walkthrough+%28Video%29', caption:'Prototype walkthrough'}
+        {type:'embed', src:'https://www.youtube.com/embed/4svBX57A8I4', caption:'Heat Stroke Prevention Vest — Demo'}
       ],
       sections:[
-        {title:'Problem', blocks:[{type:'p', text:'The mobile app had accreted five years of inconsistent UI patterns, hurting task completion and App Store ratings.'}]},
-        {title:'Approach', blocks:[{type:'p', text:'Led a full visual and interaction audit, rebuilt the core component library, and re-shipped the five highest-traffic flows first.'}]},
-        {title:'Outcome', blocks:[{type:'p', text:'App Store rating rose from 3.6 to 4.4 stars and core task completion improved by double digits.'}]}
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'Rising global temperatures are putting more people at risk of heat stroke, more often — often in places where help can\'t reach them in time. Heat stroke is fast, common, and easy to miss until it becomes a medical emergency.'},
+            {type:'cards', items:[
+              {title:'365,000 deaths / year', text:'Deaths per year linked to extreme heat exposure worldwide — a number expected to climb as heat waves become more frequent.'},
+              {title:'Symptoms hide in plain sight', text:'Most people can\'t tell the difference between "just hot and tired" and the actual onset of a medical emergency.'},
+              {title:'Help rarely arrives in time', text:'Trails, job sites, and backcountry are exactly where heat stroke strikes most — and where emergency response is slowest.'}
+            ]}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'Before building anything, the team identified two overlapping causes of heat stroke — exertional and non-exertional — and mapped which real-world groups face each one, to make sure the design targeted an actual, specific need.'},
+            {type:'cards', items:[
+              {title:'Exertional risk', text:'Strenuous physical activity in hot environments — the primary risk group for athletes and physical labor.', list:['Outdoor & industrial workers','Firefighters','Construction & farm workers','Hikers & backpackers','Athletes']},
+              {title:'Non-exertional risk', text:'Prolonged exposure to hot, humid conditions alone — often harder to self-detect since no exercise is involved.', list:['Elderly (65+)','Infants & children','Cardiovascular / respiratory conditions','Those on heat-sensitive medications']}
+            ]},
+            {type:'quote', text:'Where the idea came from: the project\'s motivation wasn\'t purely academic — a team member personally experienced heat stroke, which, combined with research showing 365,000 heat-related deaths a year, confirmed this was a real, felt problem worth solving before any prototyping began.'}
+          ]
+        },
+        {
+          title:'Competitive/Market Analysis',
+          blocks:[
+            {type:'p', text:'The personal cooling vest market splits into four established categories — each requires the wearer to manually activate or recharge it:'},
+            {type:'table', headers:['Category','Strength','Weakness'], rows:[
+              ['Ice-pack', 'Strongest immediate chill', 'Needs a freezer, heavy, short duration'],
+              ['Phase-change (PCM)', 'Steady, non-harsh cooling', 'Bulky, 2–4 hr duration, needs cold water to recharge'],
+              ['Evaporative', 'Lightweight, cheap, simple', 'Humidity-dependent, no automation'],
+              ['Battery / circulatory', 'Strongest sustained performance', 'Heaviest and most expensive']
+            ]},
+            {type:'quote', text:'The gap: no competitor product combines multiple cooling mechanisms with automatic, sensor-driven activation. This vest layers evaporative + fan + water-dripping cooling and scales itself as predicted risk rises — at a prototype cost (~$230) competitive with premium PCM and circulatory vests, but with predictive intelligence none of them have.'}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'Sensors feed a risk-scoring algorithm; the algorithm decides how hard the vest should cool — no input needed from the wearer. As predicted risk climbs from No Risk through Low, Medium, and High to Emergency, the vest escalates its response automatically.'},
+            {type:'cards', items:[
+              {title:'Sense', text:'A DHT11 sensor reads ambient temperature & humidity; two LM35 sensors (armpit + neck) track core body temperature.'},
+              {title:'Predict', text:'An onboard algorithm — built from NWS & Mayo Clinic thresholds — scores heat index and body temperature into one risk level.'},
+              {title:'Respond', text:'Servo-driven valves and fan controls escalate cooling automatically — fully mechanical, no app or button press required.'}
+            ]},
+            {type:'p', text:'Three cooling mechanisms scale with that response:'},
+            {type:'cards', items:[
+              {title:'Fan cooling', text:'Low → high airflow speed, ramped automatically as risk increases.'},
+              {title:'Evaporative layer', text:'PVA fabric wicks & cools as air moves across it.'},
+              {title:'Water dripping', text:'Servo-driven valves re-wet the fabric to sustain evaporative cooling.'}
+            ]}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'p', text:'Verified in a controlled trial: 20 minutes of treadmill exertion, then 20 minutes of active cooling at high fan speed with water dripping engaged.'},
+            {type:'stats', items:[
+              {value:'−3.8°C', label:'Core temp. drop in 20 min (±0.45°C)'},
+              {value:'616 kJ', label:'Max. energy removed'},
+              {value:'8 hrs', label:'Runtime on 2 power banks'},
+              {value:'~$230', label:'Prototype build cost'}
+            ]},
+            {type:'list', items:[
+              '✓ Waterproof — withstood 10 min of continuous oscillating spray',
+              '✓ Coverage — 0.38 m² body surface area (target: 0.35–0.42 m²)',
+              '✓ Weight — 2.85 lb dry / 6.12 lb wet (target: ≤15 lb)',
+              '✓ Runtime — 8 hours on 2 power banks (target met)',
+              '✓ Auto-activation — triggers at target body-temp / heat-index thresholds',
+              '~ Sensor accuracy — couldn\'t be independently confirmed with available equipment'
+            ]},
+            {type:'p', text:'Validating it with real people: once the prototype worked, the team took it to UBC\'s Design & Innovation Day to confirm it held up outside the lab.'},
+            {type:'cards', items:[
+              {title:'Method 01 — Live product demo', text:'Ran a public booth at the showcase, letting attendees see, try on, and react to the working prototype in person.'},
+              {title:'Method 02 — Likert-scale usability survey', text:'4-question, 1–10 scale survey covering assembly, comfort, aesthetics, and everyday usability — completed by booth visitors and peer testers.'},
+              {title:'Method 03 — Hands-on wear test', text:'Peers physically assembled and wore the vest unassisted, testing the "no additional help required" requirement directly.'}
+            ]},
+            {type:'stats', items:[
+              {value:'11', label:'Participants surveyed'},
+              {value:'1', label:'Public showcase event'},
+              {value:'4', label:'Dimensions measured'},
+              {value:'1–10', label:'Likert rating scale'}
+            ]},
+            {type:'stats', items:[
+              {value:'6.67/10', label:'Comfort'},
+              {value:'6.00/10', label:'Visual aesthetics'},
+              {value:'5.45/10', label:'Accessibility / usability'},
+              {value:'3.81/10', label:'Ease of assembly'}
+            ]},
+            {type:'p', text:'Self-reported ratings, n=11. Lower scores flag friction points, not failure — they directly shaped the roadmap below.'},
+            {type:'quote', text:'Interest in buying a cooling vest came up unprompted, multiple times — a strong signal this wasn\'t a hypothetical need. One attendee described a close call with heat exhaustion while motorbiking, echoing a similar experience one of our own team members had. Testers consistently said they\'d reach for this vest for a specific, high-stakes moment — a strenuous hike or a hot outdoor shift — rather than as daily wear. That reframed how we thought about the target use case going forward.'},
+            {type:'table', headers:['Finding','Resulting decision'], rows:[
+              ['Usability/accessibility scored lowest (5.45/10); testers cited visible wiring and bulk', 'Prioritized reducing wire visibility and vest bulk as the top item in future work'],
+              ['Users said they\'d only wear it for high-stakes activity, not daily use', 'Narrowed initial target use case to occasional, high-intensity scenarios (hiking, hot outdoor shifts) instead of everyday wear'],
+              ['Assembly was rated as manageable without instructions, despite the lowest raw score', 'Confirmed the "no additional assistance to wear" requirement was met; deprioritized building a formal instruction manual'],
+              ['Unprompted purchase interest and real anecdotes of near heat-exhaustion incidents', 'Validated genuine market pull, supporting further investment past the prototype stage']
+            ]},
+            {type:'p', text:'Limitations: single-location convenience sample (n=11) at one showcase event; self-reported ratings rather than task-based usability metrics. A production-stage study would expand sample size and add moderated task testing.'}
+          ]
+        }
       ]
     }
   };
@@ -454,10 +549,22 @@ function toggleMenu(){
           el.className = 'case-card';
           const h5 = document.createElement('h5');
           h5.textContent = card.title;
-          const p = document.createElement('p');
-          p.textContent = card.text;
           el.appendChild(h5);
-          el.appendChild(p);
+          if(card.text){
+            const p = document.createElement('p');
+            p.textContent = card.text;
+            el.appendChild(p);
+          }
+          if(card.list && card.list.length){
+            const ul = document.createElement('ul');
+            ul.className = 'case-list card-list';
+            card.list.forEach(function(item){
+              const li = document.createElement('li');
+              li.textContent = item;
+              ul.appendChild(li);
+            });
+            el.appendChild(ul);
+          }
           grid.appendChild(el);
         });
         wrap.appendChild(grid);
