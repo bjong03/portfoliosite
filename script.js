@@ -268,7 +268,7 @@ function toggleMenu(){
     },
     ex03: {
       ticket:'EX-03', category:'Personal Project', title:'SentryFlame',
-      role:'Product Manager & Software Developer', timeline:'June 2025 - July 2025', team:'1 Business Analyst',
+      role:'Product Manager & Software Developer', timeline:'Jun 2025 - Jul 2025', team:'1 Business Analyst',
       skills:['Bentley iTwin','React','TypeScript','API Design & Integration','IoT Sensor Integration','UI/UX Design','Agentic AI','Market & Regulatory Research','Business Modeling'],
       awards:['3rd Place @ 2025 Enactus Canada x Bentley iTwin4Good National Competition'],
       links:[
@@ -362,7 +362,7 @@ function toggleMenu(){
     },
     ex04: {
       ticket:'EX-04', category:'Capstone', title:'Heat Stroke Prevention Vest',
-      role:'Product Manager & Hardware Engineer', timeline:'Oct 2022 - Apr 2023', team:'2 mechanical engineers, 1 materials engineer, 2 computer engineers',
+      role:'Product Manager & Hardware Engineer', timeline:'Oct 2022 - Apr 2023', team:'2 Mechanical Engineers, 1 Materials Engineer, 2 Computer Engineers',
       skills:['Arduino Uno (C/C++)','Sensor Integration','Circuit Design','CAD Modeling','3D Printing','Material Selection','Thermodynamics','Rule-Based Algorithm Design','Human-Subject Trials','IP-Rating Waterproof Testing','Survey Design & Analysis','Field Validation'],
       awards:[],
       links:[
