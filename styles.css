@@ -298,7 +298,7 @@
   .media-item.diagram{background:var(--stone);}
   .media-item.diagram .media-frame{object-fit:contain; background:var(--stone); height:auto; aspect-ratio:900/652; max-height:380px;}
   .media-item.embed{flex-basis:340px;}
-  .media-item.embed .media-frame{height:260px;}
+  .media-item.embed .media-frame, .media-item.video .media-frame{height:auto; aspect-ratio:16/9;}
   .media-item figcaption{
     font-family:var(--mono); font-size:10px; color:var(--ink-soft);
     padding:7px 10px; background:var(--plaque); border-top:1.5px solid var(--ink);

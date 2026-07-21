@@ -59,11 +59,11 @@ function toggleMenu(){
       awards: ['Argosy Foundation VC Grant ($2000 USD)'],
       links:[
         {label:'Engineering Report', url:'https://drive.google.com/file/d/1bw5kBbUnshUirfodx3Mhc8-gNz3PR8e-/view?usp=sharing'},
-        {label: "Poster", url: 'https://drive.google.com/file/d/1JAH2OTdtHuXqIyjURKjGgCbuZfL7vtOy/view?usp=sharing'}
+        {label: "Poster", url: 'https://drive.google.com/file/d/1JAH2OTdtHuXqIyjURKjGgCbuZfL7vtOy/view?usp=sharing'},
+        {label: "Investor Pitch Deck", url: 'https://docs.google.com/presentation/d/1Ehs4-i5L39Vwi-Y2JFZQfBSqd0x6qEbsISlhz6fGrtM/edit?usp=sharing'}
       ],
       media:[
-        {type:'embed', src:'https://drive.google.com/file/d/1JKAa2pRLLg5ju3PzHHLY6Y0tavtb8FOu/preview', caption:'Haven demo — tool dispense'},
-        {type:'embed', src:'https://drive.google.com/file/d/1_gDuCNytxGZa6KlN6M9dPfg-RM9f4aUB/preview', caption:'Haven demo — tool return'}
+        {type:'embed', src:'https://www.youtube.com/embed/PBo5XtxgocQ', caption:'Haven Demo Video'}
       ],
       sections:[
         {
@@ -195,7 +195,9 @@ function toggleMenu(){
         {label: 'CSME Award Announcement', url: 'https://www.linkedin.com/posts/brandon-jong_csme2025-designcompetition-engineeringinnovation-activity-7337871602350440449-iKLY?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'},
         {label: 'Tech Futures Challenge Award Announcement', url: 'https://www.linkedin.com/posts/brandon-jong_with-transformer-partners-like-cenovus-energy-activity-7204859713853804544-dM8J?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAjd_LgB6T3NDtfy-5hveYPjeFZ6uLK7pvM'}
       ],
-      media:[],
+      media:[
+        {type:'embed', src:'https://www.youtube.com/embed/w7LKWOTTCcA', caption:'TRASH-E Prototype Video'}
+      ],
       sections:[
         {
           title:'Problem',
