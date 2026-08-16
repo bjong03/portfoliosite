@@ -211,16 +211,56 @@
   }
 
   /* ===== PROJECTS — regal gallery wall ===== */
-  .projects-wrap{ padding:36px 42px 0; }
-  .gallery{ display:grid; grid-template-columns:repeat(2, 1fr); gap:40px 30px; padding-bottom:44px; }
-  .frame{ position:relative; }
+  .projects-wrap{ padding:58px 42px 0; }
+  .gallery{ display:grid; grid-template-columns:repeat(2, 1fr); gap:66px 30px; padding-bottom:44px; }
+  .frame{ position:relative; --tilt:-1.4deg; --spot:280ms; }
+  .frame:nth-child(even){ --tilt:1.4deg; }
 
   .frame-glow{
     position:absolute; top:-30px; left:50%; transform:translateX(-50%);
     width:150%; height:70px;
     background:radial-gradient(ellipse at center, rgba(242,223,166,0.4), transparent 70%);
     pointer-events:none;
+    opacity:0.7; transition:opacity var(--spot) ease;
   }
+  .frame:hover .frame-glow{ opacity:1; }
+
+  /* museum picture light mounted above the frame — stem, shade, bulb */
+  .frame-lamp{
+    position:absolute; z-index:3; pointer-events:none;
+    top:-44px; left:50%; margin-left:-1.5px;
+    width:3px; height:12px; border-radius:2px;
+    background:linear-gradient(90deg, var(--gold-dark), var(--gold-light) 50%, var(--gold-dark));
+  }
+  .frame-lamp::before{ /* shade */
+    content:""; position:absolute; top:10px; left:50%; transform:translateX(-50%);
+    width:34px; height:13px;
+    background:linear-gradient(180deg, var(--gold-light), var(--gold) 40%, var(--gold-dark));
+    clip-path:polygon(28% 0, 72% 0, 100% 100%, 0 100%);
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,0.45));
+  }
+  .frame-lamp::after{ /* bulb — dark until the frame is hovered */
+    content:""; position:absolute; top:21px; left:50%; transform:translateX(-50%);
+    width:13px; height:6px; border-radius:0 0 7px 7px;
+    background:#9a9184;
+    transition:background var(--spot) ease, box-shadow var(--spot) ease;
+  }
+  .frame:hover .frame-lamp::after{
+    background:var(--gold-light);
+    box-shadow:0 0 10px 3px rgba(242,223,166,0.7);
+  }
+
+  /* spotlight beam cast down from the bulb over the artwork on hover */
+  .frame::before{
+    content:""; position:absolute; z-index:2; pointer-events:none;
+    top:-19px; left:50%; transform:translateX(-50%);
+    width:82%; height:165px;
+    background:linear-gradient(180deg, rgba(242,223,166,0.42), rgba(242,223,166,0.07) 65%, transparent);
+    filter:blur(7px);
+    clip-path:polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+    opacity:0; transition:opacity var(--spot) ease;
+  }
+  .frame:hover::before{ opacity:1; }
   .frame-outer{
     position:relative;
     background:linear-gradient(135deg, var(--gold-light), var(--gold) 35%, var(--gold-dark) 65%, var(--gold-light));
@@ -232,10 +272,10 @@
       inset 0 2px 4px rgba(255,255,255,0.65),
       inset 0 -5px 9px rgba(0,0,0,0.5),
       inset 0 0 0 2px rgba(0,0,0,0.25);
-    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    transition:transform var(--spot) cubic-bezier(.34,1.4,.64,1), box-shadow var(--spot) ease;
   }
   .frame:hover .frame-outer{
-    transform:translateY(-4px) scale(1.015);
+    transform:translateY(-6px) scale(1.015) rotate(var(--tilt));
     box-shadow:
       0 0 0 3px var(--wall), 0 0 0 5px var(--gold-light),
       0 24px 30px rgba(0,0,0,0.6),
@@ -249,10 +289,24 @@
   }
   .frame-outer::before{ top:4px; left:4px; }
   .frame-outer::after{ bottom:4px; right:4px; }
-  .frame-mat{ background:#0F0D08; padding:7px; border-radius:1px; }
+  .frame-mat{ background:#0F0D08; padding:7px; border-radius:1px; position:relative; overflow:hidden; }
   .canvas{ width:100%; aspect-ratio:16/9; display:block; object-fit:contain; background:#0F0D08; border-radius:1px; box-shadow: inset 0 0 20px rgba(0,0,0,0.3); }
 
-  .placard{ margin-top:18px; text-align:center; }
+  /* light sweeping across the canvas as the spotlight comes on */
+  .frame-mat::after{
+    content:""; position:absolute; z-index:3; pointer-events:none;
+    top:-10%; left:-24%; width:14%; height:120%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transform:skewX(-18deg) translateX(0);
+  }
+  .frame:hover .frame-mat::after{ animation:canvas-shine 900ms ease; }
+  @keyframes canvas-shine{
+    from{ transform:skewX(-18deg) translateX(0); }
+    to{ transform:skewX(-18deg) translateX(1000%); }
+  }
+
+  .placard{ margin-top:18px; text-align:center; transition:transform var(--spot) ease; }
+  .frame:hover .placard{ transform:translateY(3px); }
   .placard-card{
     display:inline-block; background:var(--plaque); border:1.5px solid var(--ink);
     border-radius:5px; padding:10px 20px; box-shadow:0 4px 0 rgba(0,0,0,0.3);
@@ -263,6 +317,13 @@
   .status-pip{ display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:5px; }
   .status-pip.live{background:var(--teal-glow);}
   .status-pip.review{background:var(--pink-glow);}
+
+  @media (prefers-reduced-motion:reduce){
+    .frame-outer, .placard, .frame-glow, .frame::before{ transition:none; }
+    .frame:hover .frame-outer{ transform:none; }
+    .frame:hover .placard{ transform:none; }
+    .frame:hover .frame-mat::after{ animation:none; }
+  }
 
   .stanchion-strip{ display:flex; justify-content:space-around; padding:0 60px; margin-top:-6px; }
   .stanchion{ width:6px; height:34px; background:linear-gradient(180deg,var(--gold-light),var(--gold-dark)); border-radius:2px; position:relative; }
@@ -393,7 +454,7 @@
   @media (max-width:860px){
     nav.topbar .links{display:none;}
     .menu-toggle{display:flex;}
-    .gallery{grid-template-columns:repeat(2,1fr); gap:28px 20px;}
+    .gallery{grid-template-columns:repeat(2,1fr); gap:60px 20px;}
     .stanchion-strip{display:none;}
     .section-head{padding:44px 28px 18px;}
     .projects-wrap{padding-left:28px; padding-right:28px;}
@@ -428,8 +489,8 @@
     .scroll-arrow.left{margin-right:6px;}
     .scroll-arrow.right{margin-left:6px;}
 
-    .gallery{grid-template-columns:1fr; gap:30px; padding-bottom:30px;}
-    .projects-wrap{padding:26px 20px 0;}
+    .gallery{grid-template-columns:1fr; gap:62px; padding-bottom:30px;}
+    .projects-wrap{padding:52px 20px 0;}
     .placard h3{font-size:16px;}
     .placard .one-liner{font-size:12.5px;}
     .contact-links{padding:0 20px 30px; gap:10px;}
