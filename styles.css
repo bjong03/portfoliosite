@@ -429,11 +429,27 @@
   .info-desk{
     position:relative; overflow:hidden;
     background: radial-gradient(ellipse at 50% 0%, #1E3641, var(--wall-2) 70%);
-    padding-bottom:16px;
+    padding-top:52px; padding-bottom:16px;
   }
+  .desk-stage{ position:relative; width:100%; max-width:340px; margin:0 auto; }
   .info-desk-illustration{
     display:block; margin:0 auto; max-width:340px; width:100%; height:auto;
     padding-top:36px; filter:drop-shadow(0 14px 18px rgba(0,0,0,0.4));
+    position:relative; z-index:2;
+  }
+  /* avatar crouches behind the desk, then leans out past its upper-right corner */
+  .desk-avatar{
+    position:absolute; z-index:1; pointer-events:none;
+    width:68%; height:auto; left:24%; top:3%;
+    transform:scale(0.46) rotate(-6deg);
+    filter:drop-shadow(0 10px 14px rgba(0,0,0,0.45));
+    transition:transform 460ms cubic-bezier(.34,1.45,.55,1);
+  }
+  .info-desk:hover .desk-avatar{
+    transform:translate(10%, -30%) scale(1) rotate(18deg);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .desk-avatar{ transition:none; }
   }
   .contact-links{ display:flex; flex-wrap:wrap; gap:14px; padding:0 42px 44px; }
   .contact-link{
