@@ -476,6 +476,145 @@ function toggleMenu(){
           ]
         }
       ]
+    },
+    ex05: {
+      ticket:'EX-05', category:'Hackathon', title:'Capital Class',
+      role:'Product Manager & Full-Stack Developer', timeline:'Sep 2026 — HackMIT', team:'2 Developers',
+      skills:['Product Strategy','Market & Competitive Analysis','Gamification Design','EdTech / Financial Literacy','AI Guardrail Design','Voice UX','Next.js','React','TypeScript','TailwindCSS','Recharts','Supabase','SQLite (libSQL)','OpenAI API','Deepgram STT/TTS','Role-Based Auth'],
+      awards:[],
+      links:[
+        {label:'Project Submission', url:'https://plume.hackmit.org/project/mjsrl-usblo-cxihi-raipn'},
+        {label:'Pitch Deck', url:'https://docs.google.com/presentation/d/1je3XuTlRVZ-OL6VsVOHjJJ89Jb2JKrijvty8Tk7cIgQ/edit?slide=id.p1#slide=id.p1'},
+        {label:'GitHub', url:'https://github.com/raiya-m/capital-class/tree/main'}
+      ],
+      media:[
+        {type:'embed', src:'https://www.youtube.com/embed/JVQ0rnomTtU', caption:'Capital Class — Demo Video'}
+      ],
+      sections:[
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'We started with a simple question: why is investing so hard to learn? Personal finance is a subject most people only reach once real money is already on the line — and by then the cost of a bad first decision is real. The vocabulary arrives before any reason to care about it, and the people most likely to be taught at home are the people who needed the lesson least.'},
+            {type:'stats', items:[
+              {value:'27%', label:'Of U.S. adults answered at least 5 of 7 basic financial-knowledge questions correctly (FINRA NFCS, 2025)'},
+              {value:'39', label:'States that require personal finance to graduate high school — the lesson arrives late, and usually without practice'}
+            ]},
+            {type:'cards', items:[
+              {title:'Jargon before intuition', text:'Tickers, returns, diversification — the vocabulary comes before any reason to care about it.'},
+              {title:'Real money, real risk', text:'Most people\'s first investing decision is made with money they can\'t afford to lose.'},
+              {title:'Unequal exposure', text:'If money wasn\'t discussed at home, there\'s no safe place to practice or ask questions.'}
+            ]},
+            {type:'quote', text:'What if we could make investing engaging for younger audiences — middle schoolers — using the reward system their classrooms already run on?'}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'Rather than asking teachers to adopt a new behavior system, we looked at what classrooms already use. Behavior-points apps are effectively standard infrastructure in U.S. elementary and middle schools — students already earn points, and teachers already award them. The economy exists; it just terminates at the prize box.'},
+            {type:'stats', items:[
+              {value:'95%', label:'Of U.S. elementary and middle schools have at least one teacher using ClassDojo, a behavior-points app (company-reported)'}
+            ]},
+            {type:'table', headers:['','Today','With Capital Class'], rows:[
+              ['What points become','Stickers, prizes and pizza parties','Capital to save, invest and learn'],
+              ['Where motivation ends','At the reward','It compounds']
+            ], highlightRow:1},
+            {type:'p', text:'That reframing set the constraints for both user groups — and the two pull in different directions, so the design had to satisfy both to get used at all.'},
+            {type:'cards', items:[
+              {title:'Teacher — runs the economy', text:'Already awards points daily and has no appetite for a second system to maintain or a classroom they can\'t control.', list:[
+                'Award tokens with a reason attached, so students see what they earned and why',
+                'Set the exchange rate from tokens into market cash',
+                'Publish classroom news events that move the market',
+                'Stay in charge — AI assists in real time but never takes full control'
+              ]},
+              {title:'Student — middle schooler', text:'Motivated by the reward, not by finance. Needs a reason to care about a decision before the vocabulary will stick.', list:[
+                'Three separate balances: unspent tokens, savings, and investment cash',
+                'Savings still unlock the real classroom rewards they already want',
+                'Trade without needing to know the jargon first',
+                'Ask "why did that happen?" by voice or text and get an answer about their own portfolio'
+              ]}
+            ]}
+          ]
+        },
+        {
+          title:'Competitor/Market Analysis',
+          blocks:[
+            {type:'p', text:'The classroom tools market splits cleanly in two: behavior-rewards apps that stop at the reward, and investing simulators that start at the ticker. We benchmarked the leaders in each category against the chain we wanted to build.'},
+            {type:'table', headers:['System','What it is','Behavior rewards','Savings & rewards','Investing sim','AI coach'], rows:[
+              ['ClassDojo','Behavior points + parent messaging','Core','—','—','—'],
+              ['LiveSchool','School-wide points + reward store','Core','Core','—','—'],
+              ['Classcraft','RPG-style class game (retired 2024)','Core','Partial','—','—'],
+              ['The Stock Market Game','SIFMA\'s team portfolio sim, grades 4–12','—','—','Core','—'],
+              ['Capital Class','Rewards → savings → investing → AI coach','Core','Core','Core','Core']
+            ], highlightRow:4},
+            {type:'p', text:'Every system above is built for the same middle-school band, so age isn\'t the differentiator — the chain is. Rewards tools own the earning half and never reach investing. The Stock Market Game owns the investing half but starts with money that was never earned, which is exactly the "reason to care" gap. No incumbent connects the two, and none explains the outcome back to the student. Based on public product pages and reviews, Sept 2026.'}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'Capital Class is a gamified investment education platform built on top of the behavior system schools already use. Tokens earned for real classroom behavior become capital a student has to actually decide what to do with — producing one complete learning loop every class period.'},
+            {type:'cards', items:[
+              {title:'1 — Earn', text:'Teacher awards tokens for real classroom behavior, each with a reason attached.'},
+              {title:'2 — Allocate', text:'Student splits tokens between savings for classroom rewards and market cash, at the teacher-set exchange rate.'},
+              {title:'3 — Invest', text:'Buy and sell across five sectors — technology, agriculture, transportation, energy and healthcare — including fractional shares.'},
+              {title:'4 — Observe', text:'Classroom news events move sector prices, and the portfolio moves with them.'},
+              {title:'5 — Understand', text:'Ask the AI coach why it happened, by voice or text, and get an answer about your own holdings.'}
+            ]},
+            {type:'p', text:'Three layers run underneath that loop:'},
+            {type:'cards', items:[
+              {title:'Class economy', text:'The half that already exists in schools — rebuilt so the points carry forward.', list:[
+                'Tokens awarded with a reason attached',
+                'Savings unlock real classroom rewards',
+                'Teacher-set exchange rate into market cash'
+              ]},
+              {title:'Simulated market', text:'Five sectors with live prices, history and real portfolio mechanics.', list:[
+                'Current prices, percentage changes and historical trends',
+                'Isolate individual sectors on the chart',
+                'Buy/sell orders including fractional shares'
+              ]},
+              {title:'AI news & coach', text:'The layer that turns a price move into a lesson.', list:[
+                'Teacher-published classroom news moves sector prices',
+                'Voice or text: "how does today\'s news affect the shares I own?"',
+                'Answers grounded in that student\'s own portfolio'
+              ]}
+            ]},
+            {type:'p', text:'The AI decisions were the ones we were most deliberate about. Rather than replacing the teacher or handing the model autonomy, AI adapts the simulated market and explains consequences in real time — inside hard limits:'},
+            {type:'cards', items:[
+              {title:'Teachers stay in charge', text:'Teachers run the economy and publish the news. AI assists in real time and never takes full control.'},
+              {title:'Guardrails by design', text:'Every AI-proposed news impact is clamped to ±7% per sector, keeping the market realistic and teachable rather than chaotic.'},
+              {title:'Grounded, not generic', text:'Every question ships with a live briefing — balances, holdings, sector prices, classroom news and recent conversation — so answers are about the student\'s own decisions.'}
+            ]},
+            {type:'p', text:'End to end, a spoken question runs: Deepgram transcribes it → the backend assembles the live briefing → OpenAI answers against that context → Deepgram speaks it back. Classroom state persists in SQLite, and role-based auth keeps the teacher and student experiences separate but connected.'}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'p', text:'We shipped a working end-to-end prototype at HackMIT 2026 — not a clickable mock. A teacher can award tokens, publish a news incident, and watch it move the tape; a student can allocate, trade fractional shares across five sectors, and ask the coach out loud why their portfolio moved.'},
+            {type:'stats', items:[
+              {value:'5', label:'Tradable sectors — tech, agriculture, transportation, energy, healthcare'},
+              {value:'±7%', label:'Hard clamp on every AI-proposed sector impact'},
+              {value:'2', label:'Ways to ask the coach — voice or text'},
+              {value:'1 weekend', label:'From concept to working demo'}
+            ]},
+            {type:'list', items:[
+              'Complete loop shipped — earn, allocate, invest, observe, understand',
+              'Three-balance model — unspent tokens, savings, and investment cash held separately',
+              'Live market — prices, percentage changes, historical trends and per-sector isolation',
+              'Voice coach — Deepgram STT → grounded OpenAI answer → Deepgram TTS, with a text fallback',
+              'Persistent classroom state in SQLite behind role-based teacher/student views'
+            ]},
+            {type:'p', text:'Where it goes from a hackathon build to a homeroom:'},
+            {type:'cards', items:[
+              {title:'Pilot', text:'Run a semester pilot with middle-school teachers who already use points.'},
+              {title:'Plug in', text:'Import points from existing systems like ClassDojo, so teachers change nothing.'},
+              {title:'Insights', text:'Show teachers how each student saves, diversifies and reacts to news.'},
+              {title:'Standards fit', text:'Map activities to personal-finance standards so it counts as class time.'}
+            ]},
+            {type:'quote', text:'Investing feels abstract until you have a decision to make and a reason to care about the outcome. Capital Class gives students that experience early — a chance to weigh their options, see what happens, and ask why.'}
+          ]
+        }
+      ]
     }
   };
 
