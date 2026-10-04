@@ -252,52 +252,61 @@
       <h2>Portfolio Gallery</h2>
     </div>
 
+    <div class="gallery-filters" id="galleryFilters">
+      <div class="filter-group" role="group" aria-label="Filter projects by type">
+        <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="Capstone">Capstone</button>
+        <button type="button" class="filter-btn" data-filter="Competition">Competition</button>
+      </div>
+    </div>
+
     <div class="projects-wrap">
+      <p class="gallery-empty" id="galleryEmpty">No projects match that combination.</p>
       <div class="gallery">
 
-        <div class="frame" onclick="openCase('ex01')">
+        <div class="frame" data-project="ex01" onclick="openCase('ex01')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/haven-thumbnail.png" alt="Haven thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-01</span><h3><span class="status-pip live"></span>Haven</h3><p class="one-liner">Smart Tool Vending Machine</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex02')">
+        <div class="frame" data-project="ex02" onclick="openCase('ex02')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/trash-e thumbnail.png" alt="TRASH-E Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-02</span><h3><span class="status-pip live"></span>TRASH-E</h3><p class="one-liner">Semi-Autonomous Underwater Trash Retrieval Robot</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex03')">
+        <div class="frame" data-project="ex03" onclick="openCase('ex03')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/sentryflame thumbnail final.png" alt="SentryFlame Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-03</span><h3><span class="status-pip review"></span>SentryFlame</h3><p class="one-liner">IoT Digital Twin for Emergency Fire Response</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex04')">
+        <div class="frame" data-project="ex04" onclick="openCase('ex04')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/heat-stroke-prevention-vest-thumbnail.png" alt="Heat Stroke Prevention Vest Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-04</span><h3><span class="status-pip live"></span>Heat Stroke Prevention Vest</h3><p class="one-liner">Preventative Cooling and Heat Stroke Detection</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex05')">
+        <div class="frame" data-project="ex05" onclick="openCase('ex05')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/capital-class-thumbnail.webp" alt="Capital Class Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-05</span><h3><span class="status-pip live"></span>Capital Class</h3><p class="one-liner">Gamified Investment Education for Classrooms</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex06')">
+        <div class="frame" data-project="ex06" onclick="openCase('ex06')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/whispr-thumbnail.webp" alt="Whispr Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-06</span><h3><span class="status-pip review"></span>Whispr</h3><p class="one-liner">Personalized Luxury Fragrance Wearable</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex07')">
+        <div class="frame" data-project="ex07" onclick="openCase('ex07')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/paved-pathway-thumbnail.webp" alt="Paved Pathway Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-07</span><h3><span class="status-pip review"></span>Paved Pathway</h3><p class="one-liner">IoT Smart Crosswalk for Pedestrian Safety</p></div></div>
         </div>
 
-        <div class="frame" onclick="openCase('ex08')">
+        <div class="frame" data-project="ex08" onclick="openCase('ex08')">
           <div class="frame-glow"></div><div class="frame-lamp"></div>
           <div class="frame-outer"><div class="frame-mat"><img class="canvas" src="images/thumbnails/leftover-lifeline-thumbnail.png" alt="LeftOver Lifeline Thumbnail"></div></div>
           <div class="placard"><div class="placard-card"><span class="ticket-no">EX-08</span><h3><span class="status-pip review"></span>LeftOver Lifeline</h3><p class="one-liner">Community Food Sharing App for Students</p></div></div>

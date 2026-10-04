@@ -270,7 +270,7 @@ function toggleMenu(){
       ]
     },
     ex03: {
-      ticket:'EX-03', category:'Personal Project', title:'SentryFlame',
+      ticket:'EX-03', category:'Competition', title:'SentryFlame',
       role:'Product Manager & Software Developer', timeline:'Jun 2025 - Jul 2025', team:'1 Business Analyst',
       skills:['Bentley iTwin','React','TypeScript','API Design & Integration','IoT Sensor Integration','UI/UX Design','Agentic AI','Market & Regulatory Research','Business Modeling'],
       awards:['3rd Place @ 2025 Enactus Canada x Bentley iTwin4Good National Competition'],
@@ -1273,3 +1273,83 @@ function toggleMenu(){
       setTimeout(() => el.remove(), duration);
     });
   }
+
+  /* ===== gallery placard tags + filtering ===== */
+  (function(){
+    const gallery = document.querySelector('.gallery');
+    const bar = document.getElementById('galleryFilters');
+    if(!gallery || !bar || typeof PROJECTS === 'undefined') return;
+
+    const frames = [].slice.call(gallery.querySelectorAll('.frame'));
+    const emptyEl = document.getElementById('galleryEmpty');
+    const typeBtns = [].slice.call(bar.querySelectorAll('.filter-group .filter-btn'));
+
+    function groupOf(category){
+      const c = (category || '').toLowerCase();
+      if(c.indexOf('capstone') !== -1) return 'Capstone';
+      if(c.indexOf('competition') !== -1 || c.indexOf('hackathon') !== -1) return 'Competition';
+      return 'Other';
+    }
+
+    // tag each placard from the project data
+    frames.forEach(function(frame){
+      const p = PROJECTS[frame.getAttribute('data-project')];
+      if(!p) return;
+      const awarded = !!(p.awards && p.awards.length);
+      frame.setAttribute('data-group', groupOf(p.category));
+
+      const card = frame.querySelector('.placard-card');
+      if(!card || card.querySelector('.placard-tags')) return;
+
+      const tags = document.createElement('div');
+      tags.className = 'placard-tags';
+
+      const chip = document.createElement('span');
+      chip.className = 'placard-chip';
+      chip.textContent = p.category;
+      tags.appendChild(chip);
+
+      if(awarded){
+        const badge = document.createElement('span');
+        badge.className = 'placard-chip award';
+        badge.textContent = '🏆 ' + p.awards.length;
+        badge.title = p.awards.join(' • ');
+        tags.appendChild(badge);
+      }
+      card.appendChild(tags);
+    });
+
+    // label the type buttons with live counts
+    typeBtns.forEach(function(btn){
+      const f = btn.getAttribute('data-filter');
+      const n = f === 'all' ? frames.length
+        : frames.filter(function(fr){ return fr.getAttribute('data-group') === f; }).length;
+      btn.textContent = btn.textContent.trim() + ' (' + n + ')';
+    });
+
+    let typeFilter = 'all';
+
+    function apply(){
+      let shown = 0;
+      frames.forEach(function(frame){
+        const show = typeFilter === 'all' || frame.getAttribute('data-group') === typeFilter;
+        frame.style.display = show ? '' : 'none';
+        if(show){
+          // re-stagger the hover tilt across whatever is currently visible
+          frame.style.setProperty('--tilt', (shown % 2 === 0 ? '-1.4deg' : '1.4deg'));
+          shown++;
+        }
+      });
+      emptyEl.classList.toggle('show', shown === 0);
+    }
+
+    typeBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        typeFilter = btn.getAttribute('data-filter');
+        typeBtns.forEach(function(b){ b.classList.toggle('is-active', b === btn); });
+        apply();
+      });
+    });
+
+    apply();
+  })();
