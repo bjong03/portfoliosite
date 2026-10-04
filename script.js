@@ -615,6 +615,396 @@ function toggleMenu(){
           ]
         }
       ]
+    },
+    ex06: {
+      ticket:'EX-06', category:'Case Competition', title:'Whispr',
+      role:'Product Manager', timeline:'Dec 2025 - Feb 2026', team:'1 UX Designer, 1 Engineer',
+      skills:['Product Strategy','Consumer Research','Persona Development','Competitive Analysis','Market Sizing (TAM/SAM/SOM)','Unit Economics & COGS Modeling','Pricing Strategy','Go-to-Market Strategy','Brand & Campaign Strategy','Inclusive Design','Lifecycle Sustainability','Hardware Concept Design','Mobile App UX','KPI Definition'],
+      awards:[],
+      links:[
+        {label:'Pitch Deck', url:'https://drive.google.com/file/d/1Jt1Um8Muyma5lZGwaO9_wkCb-FLxrXk3/view?usp=sharing'}
+      ],
+      media:[],
+      sections:[
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'Social media has accelerated the rise of "It" scents and a culture of dupes, rapidly eroding exclusivity and long-term attachment. At the same time, over 40% of selective fragrance users wear perfume to treat themselves or enhance their mood and well-being — yet brands lock customers into fixed compositions and intensities, with no ability to adapt over time.'},
+            {type:'cards', items:[
+              {title:'Hype & imitation', text:'A scent goes viral, dupe brands replicate the profile within months, and the exclusivity a customer paid a premium for quietly disappears.'},
+              {title:'Locked compositions', text:'One fixed blend at one fixed intensity — no way to adapt to mood, context, or the difference between a workday and a night out.'}
+            ]},
+            {type:'stats', items:[
+              {value:'40%+', label:'Of selective fragrance users wear perfume to treat themselves or enhance mood and well-being'}
+            ]},
+            {type:'quote', text:'Consumers want unique, customizable scent experiences that cannot be duplicated, while brands need new ways to maintain long-term brand loyalty.'}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'We profiled three distinct groups across the fragrance market. They arrive from very different places — one intimidated by it, one constrained by their environment, one already experimenting — but all three hit the same wall: a bottle cannot adapt once it is bought.'},
+            {type:'cards', items:[
+              {title:'Confidently Curious', text:'Millennials to early Gen X (25–45), urban. Values accessibility, confidence-building, ease of use and social safety.', list:[
+                'Interested in fragrance but unsure how to choose or wear it "correctly"',
+                'Intimidated by jargon and choice overload',
+                'Concerned about over-applying or offending others'
+              ]},
+              {title:'Context Navigators', text:'Young professionals & students (20–35), urban. Values control, adaptability, professional safety and discretion.', list:[
+                'Love fragrance but work in scent-sensitive environments',
+                'Want control over when, where, and how much scent they wear',
+                'View fragrance as identity, but also as a responsibility'
+              ]},
+              {title:'Personalization Seekers', text:'Gen Z to Millennials (18–35), urban & suburban. Values creativity, personal expression, customization and discovery.', list:[
+                'Already engaged with fragrance',
+                'Interested in layering, mood-based scent and self-expression',
+                'Frustrated by static perfume formats'
+              ]}
+            ]},
+            {type:'p', text:'The through-line is control — over intensity, over blend, over context. That framing set the product requirement: personalization could not be a one-time quiz at purchase. It had to stay adjustable every day the product is worn.'}
+          ]
+        },
+        {
+          title:'Competitor/Market Analysis',
+          blocks:[
+            {type:'p', text:'The fragrance market splits into three categories, and each solves part of the problem while creating another. We mapped them against the one thing all three target users asked for — ongoing control.'},
+            {type:'table', headers:['Category','Examples','Strength','Where it falls short'], rows:[
+              ['Luxury & Niche Houses','Chanel, Dior, Tom Ford, Le Labo, Byredo','High-quality fixed formulations that emphasize craftsmanship and signal prestige','Personalization is limited, and exclusivity fades as scents become widely recognized or replicated'],
+              ['Dupe & Inspired Brands','Dossier, ALT. Fragrances, Oil Perfumery, Zara','Replicate popular fragrance profiles at lower prices, increasing accessibility','Prioritize imitation over originality — limiting emotional attachment, perceived luxury and long-term brand loyalty'],
+              ['Digital & Custom Services','Scentbird, Waft, Phlur, Algorithmic Fragrance','Use quizzes or AI to "personalize" scent selection','Typically deliver a single, mass-produced formula with limited adaptability and little true uniqueness over time'],
+              ['Whispr','L\'Oréal Luxe','Hardware-enabled personalization — layer up to four fragrances, control diffusion intensity, and adapt by context','Concept stage; depends on hardware manufacturing and a companion app ecosystem']
+            ], highlightRow:3},
+            {type:'p', text:'No incumbent lets the wearer change the composition after purchase. That is the opening Whispr was built for — and it is a sizeable one:'},
+            {type:'stats', items:[
+              {value:'$43B', label:'TAM (CAD) — ~200MM global consumers who regularly purchase prestige fragrances'},
+              {value:'$10B', label:'SAM (CAD) — ~35MM digitally native consumers seeking personalized scent across NA, EU & East Asia'},
+              {value:'$75MM', label:'SOM (CAD) — ~263K early adopters and fragrance/fashion/tech enthusiasts (0.75% of SAM)'}
+            ]}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'Whispr is a fragrance personalization collection for L\'Oréal Luxe, built around a single idea: move the scent decision out of the bottle and onto the wearer. It ships as two products that work together.'},
+            {type:'cards', items:[
+              {title:'Whispr Brooch', text:'A wearable fragrance diffuser that blends fashion and technology — fragrance layering, diffusion strength control, and AI scent discovery through the companion app.'},
+              {title:'Discovery Flights', text:'Pre-filled cartridges holding four curated L\'Oréal Luxe fragrances, removing the risk from discovery and letting users experiment before committing to full-size refills.'}
+            ]},
+            {type:'media', items:[
+              {type:'diagram', src:'images/media/ex06/whispr-product-mockups.png', caption:'Whispr Brooch, Discovery Flight cartridges, and the collection gift set'}
+            ]},
+            {type:'p', text:'Inside the brooch:'},
+            {type:'cards', items:[
+              {title:'Modular fragrance cartridge', text:'Houses up to four fragrances behind vapor-permeable membrane O-rings for even diffusion without spillage. Durable, reusable, and refillable with any L\'Oréal Luxe fragrance.'},
+              {title:'SmartHead SLT heater', text:'Four low-voltage heaters form a ring, controlling diffusion precisely by adjusting heat across individual quadrants. Integrated temperature sensors prevent overheating.'},
+              {title:'Circuit board & LiPO battery', text:'A circular board with a Bluetooth module connects to the app, with an insulation layer protecting against heat damage. Charges on a wireless dock.'},
+              {title:'Embellished lid & magnetic pins', text:'An artisan-crafted lid made from recycled metal alloys fastens magnetically to clothing — deliberately gender-neutral so it reads as jewellery, not a gadget.'}
+            ]},
+            {type:'p', text:'The companion app is what turns the hardware into a system — it is where personalization actually lives:'},
+            {type:'cards', items:[
+              {title:'1 — Scent Control', text:'Set your scent in real time, with personal control over intensity, blend and projection, so you can feel confident without overwhelming anyone else.'},
+              {title:'2 — Scent Schedule', text:'Save combinations and release them at set moments across a day or week — automating scent and intensity for professional, personal and social contexts.'},
+              {title:'3 — Insights & Recommendations', text:'Builds an understanding of the wearer\'s scent profile and returns curated recommendations linked directly to L\'Oréal Luxe products.'}
+            ]},
+            {type:'p', text:'Discovery Flights ship as three curated starting points, each built entirely from the existing L\'Oréal Luxe portfolio:'},
+            {type:'table', headers:['Flight','Character','Fragrances'], rows:[
+              ['Fresh Confidence','Clean and energizing','Armani Acqua di Giò · Prada Luna Rossa · Maison Margiela Under the Lemon Trees · YSL Y Eau Fraîche'],
+              ['Modern Woods','Warm and grounding','YSL Y EDP · Maison Margiela By the Fireplace · Prada L\'Homme · Armani Code'],
+              ['Statement Nights','Bold and expressive','YSL Black Opium · Maison Margiela Jazz Club · Valentino Uomo Born in Roma · Armani Stronger With You']
+            ]},
+            {type:'p', text:'Two constraints shaped the design from the start rather than being added at the end:'},
+            {type:'cards', items:[
+              {title:'Inclusivity', text:'Accessibility was treated as a design input, not a marketing line.', list:[
+                'Gender-neutral brooch, designed to celebrate all expressions of beauty',
+                'Diffusion can be dialled down to comply with scent-free workplace policies',
+                'Controlled, predictable diffusion patterns for neurodivergent users who may experience sensory overload',
+                'Priced at the lower end of the premium spectrum to widen economic access'
+              ]},
+              {title:'Sustainability', text:'Designed against L\'Oréal\'s For The Future 2030 roadmap across the full product lifecycle.', list:[
+                'Brooch crafted from >70% recyclable materials by weight',
+                'Refillable cartridges cut single-use fragrance packaging by up to 80%',
+                'Cartridges constructed from recycled L\'Oréal Luxe glass fragrance bottles',
+                'On-demand diffusion reduces daily fragrance consumption ~50–70%, extending cartridge lifespan 2–3×'
+              ]}
+            ]}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'p', text:'As a concept entry, the deliverable was the business case rather than a shipped product — so we pressured the idea on the numbers: what it costs to build, what it sells for, how it reaches market, and how we would know it was working.'},
+            {type:'stats', items:[
+              {value:'86%', label:'Gross margin on the brooch — $17.00 COGS at $120.00 retail'},
+              {value:'87%', label:'Gross margin on an empty cartridge — $1.30 COGS at $10.00 retail'},
+              {value:'72%', label:'Gross margin on a Discovery Flight — $7.80–$9.80 COGS at $27.00–$35.00 retail'},
+              {value:'60–85%', label:'Industry benchmark gross margin for luxury and niche fragrance brands'}
+            ]},
+            {type:'p', text:'Pricing was benchmarked against both luxury fragrance margins and existing wearable tech, then set against a bottom-up bill of materials:'},
+            {type:'table', headers:['Assembly','Description','Cost (CAD)'], rows:[
+              ['Thermal System','Heating mechanisms for fragrance diffusion','$1.60'],
+              ['Electronics and Power','Power, sensors, circuit boards, Bluetooth modules','$13.00'],
+              ['Assembly Hardware','Hardware and adhesives needed for assembling the brooch','$0.95'],
+              ['Cartridge','Fragrance cartridge hardware','$1.00']
+            ]},
+            {type:'p', text:'Go-to-market runs as a three-phase rollout, sequenced by how each region treats fragrance:'},
+            {type:'cards', items:[
+              {title:'Phase 1 — North America', text:'Consumers are open to experimentation and use fragrance for confidence and self-expression, and wearable-tech adoption is strong — an ideal test market. Launch via pop-ups, social campaigns and traditional media.'},
+              {title:'Phase 2 — Europe', text:'Once validated in NA, expand into the world\'s most mature fragrance market, where craftsmanship and ritual matter — positioning Whispr as a refined extension of daily self-care.'},
+              {title:'Phase 3 — East Asia', text:'Fragrance adoption is growing fast and scent signals individuality. A strong gifting culture and preference for subtle scent make Discovery Flights the lead product here.'}
+            ]},
+            {type:'p', text:'The launch campaign, #DefineYourSignature, was designed to scale globally without losing the intimacy that makes the product feel luxury:'},
+            {type:'cards', items:[
+              {title:'The Quiet Runway', text:'A physical activation turning Toronto\'s Union Station into a fashion-and-fragrance experience — everyday people walk a quiet runway diffusing their own signature scent, while AI kiosks let passersby discover theirs and save it to the app.'},
+              {title:'Creator-led UGC', text:'Diverse Gen Z creators and everyday voices define their signature fragrance in short-form content, building cultural relevance and trust through real lived experience rather than polished brand film.'}
+            ]},
+            {type:'p', text:'Success metrics we committed to tracking through each launch phase:'},
+            {type:'list', items:[
+              'Total units sold',
+              'Daily active devices',
+              'Average daily session duration',
+              'Return rate',
+              'Customer Satisfaction Score (CSAT)',
+              'App-driven refill purchases'
+            ]},
+            {type:'quote', text:'Wear your scent. Your way. — the whole concept rests on one bet: that in a market where exclusivity is being eroded by imitation, the thing that cannot be duplicated is a scent the wearer composes themselves.'}
+          ]
+        }
+      ]
+    },
+    ex07: {
+      ticket:'EX-07', category:'Pitch Competition', title:'Paved Pathway',
+      role:'Product Manager', timeline:'2024 — Red Bull Basement', team:'1 Engineer',
+      skills:['Product Management','IoT Architecture','LoRaWAN','Embedded Systems (ESP32)','Doppler Radar Sensing','Piezoelectric Energy Harvesting','SolidWorks / Fusion 360','3D Printing & Prototyping','Modular Product Design','BOM & Cost Modeling','Market Sizing','Go-to-Market Planning','Pitching & Storytelling','Stakeholder Communication'],
+      awards:['National Finalist @ Red Bull Basement 2024'],
+      links:[
+        {label:'Pitch Deck', url:'https://docs.google.com/presentation/d/1AHmfNNtDG1C9MGxVSYt9g016MXl1s00tizn9KDYmBpA/edit?usp=sharing'}
+      ],
+      media:[
+        {type:'embed', src:'https://www.youtube.com/embed/mwiCfW0I9QE', caption:'Paved Pathway — Red Bull Basement National Finals 2024'}
+      ],
+      sections:[
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'Several crosswalks on UBC\'s campus are extremely dimly lit at night. The year we entered, several first-year students were killed on campus in a motor vehicle collision — which turned a problem we walked past every day into the one we wanted to work on. The question was not how to redesign the crosswalk, but how to make a pedestrian visible, and warn both sides, before anyone has to react.'},
+            {type:'stats', items:[
+              {value:'12M', label:'Pedestrians severely injured by motor vehicles each year, globally'},
+              {value:'74%', label:'Of those crashes occur due to poor visibility'}
+            ]},
+            {type:'cards', items:[
+              {title:'Pedestrians disappear after dark', text:'On an unlit crosswalk a person is effectively invisible to an approaching driver until they are already in the road — the one moment where being seen earlier matters most.'},
+              {title:'Nothing intervenes in time', text:'A dangerous approach speed only becomes obvious once it is too late to act. Nothing warns the pedestrian stepping out, and nothing tells the city it happened.'}
+            ]},
+            {type:'p', text:'The objective: a platform that illuminates pedestrians at night, detects dangerous vehicle behaviour, and alerts both pedestrians and authorities before an incident — cheap enough and simple enough to install that a city could put one at every crosswalk, not just the worst one.'}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'Two groups have to be served at once, and they constrain the product in completely different ways. A pedestrian only benefits from protection that requires nothing of them; a city only deploys infrastructure it can actually afford to buy, install and maintain at scale. Either one alone produces the wrong product.'},
+            {type:'cards', items:[
+              {title:'Pedestrian — crossing at night', text:'Wants to be seen and warned, but will not carry a beacon, install an app, or look at a phone mid-crossing.', list:[
+                'Illumination has to trigger from the act of stepping onto the crosswalk',
+                'Warnings must be readable on the ground, in the direction they are already looking',
+                'Protection must work for someone who has never heard of the product'
+              ]},
+              {title:'City & authorities — buying and maintaining it', text:'Wants measurable safety improvement without a capital project per intersection.', list:[
+                'Low enough unit cost to justify broad deployment, not a single pilot site',
+                'Installs at an existing crosswalk without rebuilding the intersection',
+                'Cannot depend on strong wifi coverage at the roadside',
+                'Should return data on dangerous driving, not just react to it'
+              ]}
+            ]},
+            {type:'p', text:'Those constraints are what produced the two least obvious decisions in the build — harvesting power from footsteps rather than trenching for mains power, and choosing LoRaWAN over wifi. We grounded them in direct observation of campus crosswalks and the realities of municipal procurement; validating them with city stakeholders was scoped as part of the planned UBC pilot rather than something we had completed at pitch time.'}
+          ]
+        },
+        {
+          title:'Competitor/Market Analysis',
+          blocks:[
+            {type:'p', text:'The existing answer to an unsafe crosswalk is a pedestrian hybrid signal — effective, but priced as a capital project. That price is the reason dangerous crosswalks stay dangerous: a city can only afford to fix the very worst ones.'},
+            {type:'table', headers:['Option','What it does','Cost'], rows:[
+              ['Pedestrian Hybrid Signal (PEDSAFE)','Signalized beacon installation at the crosswalk','$50,000 – $120,000 per unit, plus ongoing maintenance fees'],
+              ['Standard crosswalk','Paint and signage only — no illumination, no detection, no alerting','Low cost, no active protection'],
+              ['Paved Pathway','Kinetic-powered illumination, doppler speed detection, LoRaWAN alerting, modular install','~$200 per module (~$165 bill of materials)']
+            ], highlightRow:2},
+            {type:'stats', items:[
+              {value:'~$165', label:'Estimated bill of materials per module'},
+              {value:'$50K–$120K', label:'Cost of the conventional alternative it undercuts'}
+            ]},
+            {type:'p', text:'The platform also generalizes well beyond crosswalks — anywhere footfall is dense and lighting or sensing is needed, the same kinetic tile applies. We mapped six secondary markets:'},
+            {type:'list', items:[
+              'Highways — larger tiles powering tunnel/bridge lights, cameras and road signs',
+              'Event spaces, concerts & sports fields — floodlights, scoreboards, and interactive displays driven by crowd movement',
+              'Staircases — platforms from the base of the stairs illuminating steps ahead',
+              'Restrooms — powering water pumps and ventilation at festivals and emergency shelters',
+              'Healthcare facilities — lighting hallways at night and reporting unusual movement to staff',
+              'AR/VR gaming areas — responding to user movement for a more interactive experience'
+            ]}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'Paved Pathway is an IoT smart platform that proactively protects pedestrians. It lights the person crossing, watches the vehicles approaching, and tells every other crosswalk in the city what it just saw — all from a tile that installs on top of an existing crosswalk.'},
+            {type:'cards', items:[
+              {title:'Kinetic-powered illumination', text:'A piezoelectric tile generates power from the movement of pedestrians stepping on the platform, lighting them the moment they step on. Solar-powered lights supplement the prototype for robustness.'},
+              {title:'Doppler radar detection', text:'Radar modules at the front of the platform detect speeding vehicles on approach — turning the crosswalk itself into the sensor rather than adding roadside equipment.'},
+              {title:'LoRaWAN mesh', text:'LoRa modules carry alerts to authorities and to neighbouring platforms. Chosen over wifi because it is long range, needs no strong wifi coverage at the roadside, and transmits even through concrete buildings.'},
+              {title:'Dot matrix display', text:'A programmable display on the platform surface shows real-time warnings to pedestrians — including dangers detected by a different Paved Pathway elsewhere in the city.'}
+            ]},
+            {type:'p', text:'Those four pieces produce one behaviour chain when a vehicle approaches too fast:'},
+            {type:'cards', items:[
+              {title:'1 — Detect', text:'Doppler radar at the crosswalk identifies a speeding vehicle on approach.'},
+              {title:'2 — Report', text:'The alert is sent to authorities and city officials over LoRaWAN, building a record of where dangerous driving actually happens.'},
+              {title:'3 — Warn', text:'The alert propagates to nearby Paved Pathways, which display real-time warnings to pedestrians about to step out.'}
+            ]},
+            {type:'p', text:'The system was designed for modular assembly — each module works on its own, but they combine when the site calls for it. That is what lets a city scale coverage to the intersection rather than buying a fixed installation:'},
+            {type:'cards', items:[
+              {title:'Curb module', text:'The entry point at the kerb — illumination and the pedestrian-facing display.'},
+              {title:'Corner module', text:'Wraps the corner of an intersection where pedestrian paths converge.'},
+              {title:'Central tile module', text:'Fills the crossing itself, extending illumination and power generation across the span.'}
+            ]},
+            {type:'p', text:'Combined, they form a full intersection assembly; standalone, a single module still protects a small crosswalk — which is where most of the unlit risk actually sits.'}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'p', text:'Paved Pathway reached the National Finals of Red Bull Basement 2024, where the judged deliverable was a 60-second pitch and a credible plan to build rather than a finished product. At that point it existed as a CAD design, a costed bill of materials, and a modular assembly plan — the MVP build was deliberately scoped as the first sprint of what came next.'},
+            {type:'cards', items:[
+              {title:'Sprint 1 — MVP', text:'Build the curb platform: illuminating surface, kinetic energy power production, and real-time alerts on the visual display.'},
+              {title:'Sprint 2 — Global Finals', text:'Take insights from industry professionals at Global Finals back to Vancouver, focusing on how alerts reach officials.'},
+              {title:'UBC Pilot Test', text:'Partner with UBC to test Paved Pathway on the campus crosswalks that motivated it.'},
+              {title:'Sprint 3 — Iterate', text:'Fold pilot findings back into the design and improve the platform.'},
+              {title:'Accelerator', text:'Work with industry leaders and mentors to take the product to the next level.'}
+            ]},
+            {type:'p', text:'The strongest validation was the cost argument holding up under scrutiny: at roughly $165 in components, protecting a crosswalk stops being a capital decision and becomes a procurement line item — which is the only version of this product a city can deploy everywhere rather than once.'},
+            {type:'quote', text:'Pedestrian safety has never been more accessible, with each unit costing less than a fraction of smart crosswalks. Join us on our mission to pave a safer and smarter future for pedestrians and cities worldwide.'}
+          ]
+        }
+      ]
+    },
+    ex08: {
+      ticket:'EX-08', category:'Design Competition', title:'LeftOver Lifeline',
+      role:'Product Manager', timeline:'2023 - 2024', team:'2 UX/UI Designers, 1 UX Researcher',
+      skills:['Product Management','User Research','Survey & Poll Design','Persona Development','User Journey Mapping','Competitive Analysis','Figma Prototyping','UX/UI Design','Gamification Design','Trust & Safety Design','Monetization Modeling','Partnership Strategy','Pitching & Storytelling'],
+      awards:['1st Place @ 2023 UXplore Competition','Semifinalist @ 2024 Innovation Onboard Pitch Competition'],
+      links:[
+        {label:'Figma Prototype', url:'https://www.figma.com/proto/qDR4GssUQr2VACJhuBFbCa/LeftOver-Lifeline?type=design&node-id=23-522&t=HHj27dCGbBA8QhDI-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=23%3A522&show-proto-sidebar=1'},
+        {label:'Pitch Deck', url:'https://drive.google.com/file/d/1jRYNoiRxs4SVQHKQ_PgEBFIMYf8NT7X_/view'},
+        {label:'Innovation Onboard Poster', url:'https://docs.google.com/presentation/d/1uVUGrP5_JuRQK2vaTz90bhTQMYgveaxE/edit?slide=id.p1#slide=id.p1'}
+      ],
+      media:[],
+      sections:[
+        {
+          title:'Problem',
+          blocks:[
+            {type:'p', text:'Two problems sit next to each other on a university campus and never meet. Food gets thrown away because someone cooked too much, while students a building over skip meals because groceries cost more than their budget allows. The infrastructure meant to bridge that gap — the food bank — is the one thing many students will not use.'},
+            {type:'stats', items:[
+              {value:'35%', label:'Of UBC Vancouver undergraduates face food insecurity (40% at UBC Okanagan)'},
+              {value:'500%', label:'Increase in AMS Food Bank visits in 2022 versus pre-pandemic'},
+              {value:'83%', label:'Drop in UBC funding for food security programs in 2022/23'},
+              {value:'1.17B', label:'Tonnes of food wasted globally each year'}
+            ]},
+            {type:'p', text:'The usage data says the same thing the students did. Across 116,963 Greater Vancouver Food Bank visitors, just 9% of visitors accounted for 65% of all visits — a small group relying on it heavily, while most people who need help never return.'},
+            {type:'quote', text:'Most people who are struggling with severe food insecurity do not see food banks as a solution to their problem. — PROOF, University of Toronto'},
+            {type:'p', text:'That reframed the project. The shortage was not food, and it was not need — it was stigma. So the guiding question became: how can we destigmatize food banks and donations?'}
+          ]
+        },
+        {
+          title:'User Research',
+          blocks:[
+            {type:'p', text:'We needed to know whether students would actually participate on both sides of an exchange, so we went where they already were — running slider polls through Instagram stories and following up with structured interview questions about habits, comfort levels and awareness.'},
+            {type:'stats', items:[
+              {value:'26', label:'Responses on comfort receiving another member\'s surplus food (156 views)'},
+              {value:'15', label:'Responses on comfort donating surplus food (117 views)'},
+              {value:'5', label:'Structured interview questions on habits, comfort and awareness'}
+            ]},
+            {type:'list', items:[
+              'On a scale of 1–10, how comfortable would you feel receiving another UBC member\'s surplus food or grocery items?',
+              'On a scale of 1–10, how comfortable would you feel sharing your surplus food or grocery items?',
+              'How often do you have leftover food or produce in your house?',
+              'How many people do you know who have struggled, or are struggling, with food insecurity?',
+              'What are your thoughts on UBC\'s reduction in funding for subsidized meal programs?'
+            ]},
+            {type:'p', text:'The responses confirmed both halves of the exchange existed on the same campus — surplus on one side, need on the other, and discomfort in the middle:'},
+            {type:'quote', text:'I occasionally have to throw out food in my household since I tend to prepare too much for one person. … I know a few friends who are struggling to keep their expenses below their budget, especially with rising prices of groceries. … UBC food prices are relatively more expensive in comparison to other areas in the Lower Mainland.'},
+            {type:'p', text:'Two personas came out of it, and we mapped a user journey for each:'},
+            {type:'cards', items:[
+              {title:'Sarah — the Sharer', text:'21, Vancouver, 3rd-year Cognitive Systems student.', list:[
+                'Habit: makes too much food at once',
+                'Habit: gets sick of leftovers easily, so food gets thrown away',
+                'Goal: find an easy way to save her excess leftovers',
+                'Goal: help people with her surplus rather than binning it'
+              ]},
+              {title:'Simon — the Receiver', text:'26, Vancouver, 2nd-year Master\'s student.', list:[
+                'Habit: too busy with schoolwork to collect vouchers at Sprouts',
+                'Constraint: stretched by international tuition',
+                'Goal: find cheaper alternatives for meals',
+                'Goal: avoid lining up at a local food bank'
+              ]}
+            ]},
+            {type:'p', text:'Simon is the whole design brief in one line. He qualifies for help, he knows where it is, and he will not go — because being seen in the queue costs more than the meal is worth. Anything we built had to let him receive food without being identified as someone who needed it.'}
+          ]
+        },
+        {
+          title:'Competitor/Market Analysis',
+          blocks:[
+            {type:'p', text:'Food-waste apps already exist, and they work — but each solves one slice of the problem, and none of them touches the stigma that keeps people out of the system in the first place.'},
+            {type:'table', headers:['Product','Model','What it does','Where it leaves a gap'], rows:[
+              ['Too Good To Go','Business to consumer','Sells restaurants\' leftover food in discounted "magic bags"','Commercial surplus only — no peer-to-peer sharing, and buying still requires paying'],
+              ['OLIO','Peer to peer','Platform for neighbours to share surplus food','Public profiles and listings; no anonymity for people who need food rather than want to swap it'],
+              ['NoWaste','Personal utility','Tracks food expiry in the user\'s own pantry','Prevents waste in one household — never connects surplus to anyone who needs it'],
+              ['Food banks','Donations','Distribute donated food to people in need','The stigma barrier itself — a last resort most students avoid'],
+              ['LeftOver Lifeline','Hybrid P2P + donations','Anonymous, gamified campus marketplace combining donations and a surplus market','Campus-scoped at launch; depends on institutional partnerships to scale']
+            ], highlightRow:4},
+            {type:'p', text:'That is the opening: long-term stigmatization around food donations, food scarcity and food waste is the gap every incumbent leaves open. We scoped the launch tightly around a community that already has a trust layer we could borrow — UBC\'s own login system:'},
+            {type:'cards', items:[
+              {title:'Primary users', text:'UBC faculty and students — a closed, verifiable community where anonymity can be offered safely because identity is still authenticated behind the scenes.'},
+              {title:'Secondary users (post-scale)', text:'University students more broadly, low-income families, and families with children under 18.'},
+              {title:'Launch partners', text:'AMS Sustainability, Sprouts, Agora Cafe, the AMS Food Bank, and local businesses — existing food-security infrastructure rather than competitors.'}
+            ]}
+          ]
+        },
+        {
+          title:'Solution',
+          blocks:[
+            {type:'p', text:'LeftOver Lifeline is a community food-sharing app that connects people with surplus food to people who need it. The product decisions all follow from one constraint: a receiver must never have to identify themselves as someone in need.'},
+            {type:'cards', items:[
+              {title:'Decentralized food sharing', text:'A dual model — donations alongside a surplus marketplace — so the same app serves generosity and ordinary exchange, which is what makes using it unremarkable.'},
+              {title:'Anonymous usership', text:'Identities are protected on both sides, removing the visibility that makes asking for food feel like an admission.'},
+              {title:'Security', text:'UBC CWL authentication, terms of agreement, and in-app reporting keep a community that is anonymous to each other still accountable to the platform.'},
+              {title:'Community-centric focus', text:'Both individuals and businesses participate, reducing food waste while building local connections rather than one-way charity.'},
+              {title:'Gamification', text:'Karma, levels and achievements create a positive feedback loop — recognition for giving, and a reason to come back.'}
+            ]},
+            {type:'p', text:'The gamification layer is doing real work here, not decoration. It reframes participation as status rather than need:'},
+            {type:'cards', items:[
+              {title:'Tiered "spoon" system', text:'Users climb from Bronze to Platinum as positive interactions accumulate, turning repeat sharing into visible standing in the community.'},
+              {title:'Level perks', text:'Each tier unlocks premium features, coupons, and gift cards from business partners — tying the reward loop back to local businesses.'},
+              {title:'Premium features', text:'Ad-free use, instant alerts, increased food vouchers, and higher priority and visibility for items posted to the marketplace.'}
+            ]}
+          ]
+        },
+        {
+          title:'Results',
+          blocks:[
+            {type:'p', text:'The concept won 1st Place at the 2023 UXplore Competition and went on to reach the semifinals of the 2024 Innovation Onboard Pitch Competition, carried from a research-backed UX case into a business case with a funded path to launch. The deliverable was a fully interactive Figma prototype covering both the sharer and receiver journeys end to end.'},
+            {type:'p', text:'We modelled revenue against a 26,000-user campus base, mixing external funding with user-generated revenue so the platform would not depend on charging the people it exists to help:'},
+            {type:'table', headers:['Revenue stream','Assumptions','Monthly revenue (CAD)'], rows:[
+              ['Transaction fees','26,000 users · 5 monthly transactions each · 10% fee · 60% retention','$7,800'],
+              ['Premium feature fees','26,000 users · 3% conversion · $5 per month','$3,900'],
+              ['Advertising fees','26,000 users · 30 monthly impressions · $1 CPM · 60% retention','$468']
+            ], highlightRow:0},
+            {type:'stats', items:[
+              {value:'$12.2K', label:'Modelled monthly revenue at a 26,000-user campus base'},
+              {value:'3', label:'Independent revenue streams, none charging receivers'},
+              {value:'5', label:'Launch partners identified across campus food security'}
+            ]},
+            {type:'p', text:'Alongside that, direct support was scoped through grants, donations and corporate social responsibility partnerships, with white-label licensing to other campuses as the scaling path — the same product sold to the institution rather than the student.'},
+            {type:'quote', text:'Share, care, and make a difference. The measure of success was never how much food moved — it was whether someone who needed a meal felt able to take one.'}
+          ]
+        }
+      ]
     }
   };
 
